@@ -11,6 +11,7 @@ Portal estático com tela de acesso e a Central do Cliente, onde ficam todos os 
 - `assets/materiais.js` — **lista de materiais exibidos na Central** (é o único arquivo a editar para publicar um material novo).
 - `assets/guarda.js` — proteção de acesso e botões "Central" e "Sair" dentro dos materiais.
 - `assets/` — logos Molla e Aldea.
+- `favicon.ico`, `site.webmanifest` e `assets/icons/` — favicon da Central e ícone para salvar na tela de início do celular. Os materiais recebem o favicon automaticamente pelo `guarda.js`.
 - `vercel.json` — URLs limpas, noindex e redirecionamento do link antigo `/apresentacao`.
 
 ## Publicar
