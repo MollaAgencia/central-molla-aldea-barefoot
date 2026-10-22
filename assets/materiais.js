@@ -46,7 +46,7 @@ window.MATERIAIS = [
     arquivo: 'materiais/report-performance.html',
     data: '2026-10-22',
     dataTexto: 'Report 01 · Outubro de 2026',
-    detalhes: ['Período 01/09 a 21/10/2026', 'Linha de base e 1ª semana da nova estrutura']
+    detalhes: ['Período 01/09 a 21/10/2026', 'Setembro como referência e 1ª semana da nova estrutura']
   },
   {
     titulo: 'Curadoria de conteúdos para mídia paga',

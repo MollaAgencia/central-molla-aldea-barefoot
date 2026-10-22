@@ -20,7 +20,6 @@
   --meta:#E05E14;--google:#3E6FB0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
 body{font-family:"Inter",Arial,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.5;min-height:100vh;display:flex;flex-direction:column}
 a{color:inherit}
 button,select,input{font:inherit;color:inherit}
@@ -78,6 +77,7 @@ h1 em{font-style:normal;color:var(--orange)}
 main{flex:1;padding:28px 0 64px}
 .chapter{display:none}
 .chapter.on{display:block}
+.ch-head{scroll-margin-top:calc(var(--stick-h,150px) + 12px)}
 .ch-head{margin-bottom:22px}
 .eyebrow{display:flex;align-items:center;gap:12px;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--orange-deep);font-weight:800;margin-bottom:10px}
 .eyebrow::before{content:"";width:36px;height:3px;background:var(--orange)}
@@ -186,7 +186,7 @@ table.t{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:
 .tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
 .tl .ev{position:relative;background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px}
 .tl .ev::before{content:"";position:absolute;left:-21px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:3px solid var(--orange)}
-.tl .ev.mensuracao::before{border-color:var(--google)}.tl .ev.metodologia::before{border-color:var(--aldea)}.tl .ev.marco::before{border-color:var(--navy)}
+.tl .ev.mensuracao::before{border-color:var(--google)}.tl .ev.preparacao::before{border-color:#B9A57E}.tl .ev.metodologia::before{border-color:var(--aldea)}.tl .ev.marco::before{border-color:var(--navy)}
 .tl .ev .top{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:12px;color:var(--soft);font-weight:700}
 .tl .ev h4{font-size:14.5px;font-weight:800;margin:4px 0 2px}
 .tl .ev p{font-size:13px;color:var(--soft)}
@@ -234,6 +234,37 @@ details.hist li b{color:var(--ink)}
 .warn{display:flex;gap:10px;align-items:flex-start;background:var(--amber-chip);border:1.5px solid #F2DDAE;border-radius:12px;padding:12px 14px;font-size:13px;color:#6B4D0E;margin-bottom:14px}
 .warn svg{width:18px;height:18px;min-width:18px;color:var(--amber);margin-top:1px}
 .mt{margin-top:14px}.mt2{margin-top:24px}
+.marcos{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:8px;font-size:12px;color:var(--soft)}
+.marcos span{display:inline-flex;align-items:center;gap:6px}
+.marcos b{width:18px;height:18px;border-radius:50%;background:var(--ink);color:#fff;font-size:10px;display:inline-flex;align-items:center;justify-content:center}
+.narr{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.narr .nt{display:flex;align-items:center;gap:8px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--ink)}
+.narr em{font-style:normal;letter-spacing:.04em;text-transform:none;font-size:10.5px;padding:1px 7px;border-radius:999px}
+.narr em.confirmado{background:var(--green-chip);color:var(--green)}.narr em.hipotese{background:var(--bg);color:var(--soft);border:1px dashed var(--soft-light)}
+.narr p{font-size:13px;color:var(--soft);margin-top:4px;line-height:1.5}
+.ref{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:0;border:1.5px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper);font-size:13px}
+.ref>div{padding:10px 14px;border-bottom:1px solid var(--line)}
+.ref>div:nth-last-child(-n+3){border-bottom:none}
+.ref .hd{background:var(--bg);font-weight:800;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.ref .k{color:var(--soft);font-weight:600}.ref .v{font-weight:800;font-variant-numeric:tabular-nums}
+.note{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--soft);margin:2px 0 14px}
+.note svg{width:15px;height:15px;min-width:15px;margin-top:2px}
+.pauta{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;overflow:hidden}
+.pauta-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--bg);font-size:12.5px;color:var(--soft)}
+.pauta-top b{color:var(--ink)}
+.pq{padding:12px 16px;border-bottom:1px solid var(--line)}
+.pq:last-child{border-bottom:none}
+.pq label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;font-size:14px;line-height:1.45}
+.pq input[type=checkbox]{width:18px;height:18px;min-width:18px;margin-top:2px;accent-color:var(--green);cursor:pointer}
+.pq .st{margin-left:auto;flex-shrink:0}
+.pq.done label span.tx{color:var(--soft);text-decoration:line-through;text-decoration-color:var(--soft-light)}
+.pq textarea{display:block;width:100%;margin-top:8px;border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;font:inherit;font-size:13px;min-height:58px;resize:vertical;background:var(--paper)}
+.pq .add{border:none;background:none;color:var(--orange-deep);font-weight:700;font-size:12.5px;cursor:pointer;margin:6px 0 0;padding:0}
+.pq textarea[hidden]{display:none}
+.pq .wrapnota{padding-left:30px}
+.linkbtn{border:none;background:none;color:var(--soft);font-weight:700;font-size:12.5px;cursor:pointer;text-decoration:underline}
+.ftoggle{display:none}
+
 
 footer{border-top:1px solid var(--line);background:var(--paper)}
 footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:20px;padding-bottom:20px;flex-wrap:wrap}
@@ -250,7 +281,6 @@ footer span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-wei
 }
 @media (max-width:680px){
   .wrap{padding:0 16px}
-  .sticky{position:static}
   .bar .molla{height:22px}
   .pdf-btn{padding:8px 10px}
   .pdf-btn .lbl{display:none}
@@ -263,8 +293,13 @@ footer span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-wei
   .fgroup{flex:1 1 100%}
   .fgroup .sel{width:100%}
   .seg{width:100%}.seg button{flex:1}
-  .fnote{display:none}
-  .sticky.open .fnote{display:flex}
+  .ftoggle{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;margin-top:10px;background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;text-align:left}
+  .ftoggle span{color:var(--soft);font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .filters{display:none}
+  .sticky.open .filters{display:flex}
+  .fnote{font-size:12px}
+  .ref{grid-template-columns:1.1fr 1fr 1fr;font-size:12px}
+  .ref>div{padding:8px 10px}
   .item{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
   .frow{grid-template-columns:96px 1fr 92px;gap:8px;font-size:12px}
@@ -306,6 +341,7 @@ footer span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-wei
 </header>
 
 <div class="sticky" id="sticky">
+  <div class="wrap"><button class="ftoggle" id="ftoggle" type="button" aria-expanded="false">Filtros<span id="fresumo"></span></button></div>
   <div class="wrap filters">
     <div class="fgroup"><span>Plataforma</span>
       <div class="seg" id="plat"><button data-p="todas" class="on" type="button">Todas</button><button data-p="meta" type="button">Meta Ads</button><button data-p="google" type="button">Google Ads</button></div>
@@ -330,6 +366,7 @@ footer span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-wei
 
 <script src="../assets/reports/dados-meta.js"></script>
 <script src="../assets/reports/dados-google.js"></script>
+<script src="../assets/reports/dados-instagram.js"></script>
 <script src="../assets/reports/registro.js"></script>
 <script src="../assets/reports/edicoes.js"></script>
 <script>
@@ -338,6 +375,7 @@ footer span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-wei
 /* ====================================================================== Dados */
 var META = window.RP_META || {colunas:[],linhas:[],fontes:[]};
 var GOOG = window.RP_GOOGLE || {diario:[],consolidados:[],fontes:[]};
+var IG = window.RP_INSTAGRAM || null;
 var REG = window.RP_REGISTRO || {eventos:[],negativacao:[],plano:[]};
 var EDS = (window.RP_EDICOES || []).slice().sort(function(a,b){ return b.numero - a.numero; });
 
@@ -450,7 +488,7 @@ function opcoesPeriodo(){
 }
 function opcoesComp(){
   var e=ed(), o=[];
-  if (e.padrao && e.padrao.comp) o.push(['padrao','Comparação da edição · '+per(e.padrao.comp.ini,e.padrao.comp.fim)]);
+  if (e.padrao && e.padrao.comp) o.push(['padrao','Referência da edição · '+per(e.padrao.comp.ini,e.padrao.comp.fim)]);
   o.push(['anterior','Período anterior equivalente'],['mesant','Mesmo período do mês anterior']);
   (e.fases||[]).forEach(function(f){ o.push(['fase:'+f.id, f.nome+' · '+per(f.ini,f.fim)]); });
   o.push(['nenhum','Sem comparação'],['custom','Personalizado']);
@@ -482,30 +520,31 @@ function overlaps(){ return S.cIni && !(S.cFim < S.ini || S.cIni > S.fim); }
 // dir: 1 maior é melhor · -1 menor é melhor · 0 neutro. vol: métrica de volume (normaliza por dia)
 var KDEF = {
   g:{l:'Investimento', f:brl, dir:0, vol:1, o:'D'}, im:{l:'Impressões', f:int, dir:0, vol:1, o:'D'},
-  ck:{l:'Cliques no link', f:int, dir:1, vol:1, o:'D'}, ctr:{l:'CTR', f:function(v){return pct(v);}, dir:1, o:'C'},
-  cpc:{l:'CPC', f:brl, dir:-1, o:'C'}, cpm:{l:'CPM', f:brl, dir:-1, o:'C'},
-  cp:{l:'Compras', f:int, dir:1, vol:1, o:'D'}, rv:{l:'Receita atribuída', f:brl, dir:1, vol:1, o:'D'},
-  cpa:{l:'Custo por compra', f:brl, dir:-1, o:'C'}, roas:{l:'ROAS', f:dec, dir:1, o:'C'},
-  atc:{l:'Adições ao carrinho', f:int, dir:1, vol:1, o:'D'}, ic:{l:'Checkouts iniciados', f:int, dir:1, vol:1, o:'D'},
+  ck:{l:'Visitas (cliques)', f:int, dir:1, vol:1, o:'D'}, ctr:{l:'Taxa de clique', f:function(v){return pct(v);}, dir:1, o:'C'},
+  cpc:{l:'Custo por clique', f:brl, dir:-1, o:'C'}, cpm:{l:'Custo por mil impressões', f:brl, dir:-1, o:'C'},
+  cp:{l:'Vendas', f:int, dir:1, vol:1, o:'D', venda:1}, rv:{l:'Receita atribuída', f:brl, dir:1, vol:1, o:'D', venda:1},
+  cpa:{l:'Custo por venda', f:brl, dir:-1, o:'C', venda:1}, roas:{l:'Retorno (ROAS)', f:dec, dir:1, o:'C', venda:1},
+  atc:{l:'Adições ao carrinho', f:int, dir:1, vol:1, o:'D', venda:1}, ic:{l:'Checkouts iniciados', f:int, dir:1, vol:1, o:'D', venda:1},
   msg:{l:'Conversas iniciadas', f:int, dir:1, vol:1, o:'D'}, tc:{l:'Compra por clique', f:function(v){return pct(v);}, dir:1, o:'C'}
 };
 function delta(k, a, b, nA, nB){
   var def=KDEF[k]; if (!b) return '';
   var va=a[k], vb=b[k];
-  if (!b.n || !b.g) return '<div class="d neutral"><small>sem entrega na comparação</small></div>';
-  if (va==null || vb==null) return '<div class="d neutral"><small>sem base na comparação</small></div>';
+  if (!b.n || !b.g) return '<div class="d neutral"><small>sem dados no período de comparação</small></div>';
+  if (va==null || vb==null) return '<div class="d neutral"><small>sem base de comparação</small></div>';
   var norm = def.vol && nA!==nB;
   if (norm){ va=va/nA; vb=vb/nB; }
   if (vb===0) return va===0 ? '<div class="d neutral">= <small>igual</small></div>' : '<div class="d neutral"><small>antes: zero</small></div>';
   var p=(va-vb)/Math.abs(vb)*100, up=p>0;
-  var cls = def.dir===0 || Math.abs(p)<0.5 ? 'neutral' : ((up?1:-1)*def.dir>0 ? 'up-good' : 'up-bad');
+  var curto = def.venda && nA<14;
+  var cls = curto || def.dir===0 || Math.abs(p)<0.5 ? 'neutral' : ((up?1:-1)*def.dir>0 ? 'up-good' : 'up-bad');
   var arrow = Math.abs(p)<0.5 ? '=' : (up ? '▲' : '▼');
-  return '<div class="d '+cls+'">'+arrow+' '+pct(Math.abs(p),1)+' <small>'+(norm?'por dia · ':'')+'vs '+(norm&&def.f===int?dec:def.f)(norm?b[k]/nB:b[k])+(norm?'/dia':'')+'</small></div>';
+  return '<div class="d '+cls+'">'+arrow+' '+pct(Math.abs(p),1)+' <small>'+(norm?'por dia · ':'')+'vs '+(norm&&def.f===int?dec:def.f)(norm?b[k]/nB:b[k])+(norm?'/dia':'')+(curto?' · período curto para leitura de vendas':'')+'</small></div>';
 }
 function kpi(k, a, b, nA, nB, plat, nota){
-  var def=KDEF[k], v=a[k];
+  var def=KDEF[k], v=a[k], semVenda=v==null&&def.venda&&a.g>0;
   return '<div class="kpi '+(plat||'')+'"><div class="l"><span>'+def.l+'</span>'+oTag(def.o)+'</div>'+
-    '<div class="v'+(v==null?' na':'')+'">'+(v==null?'sem dado':def.f(v))+'</div>'+delta(k,a,b,nA,nB)+(nota?'<div class="n">'+nota+'</div>':'')+'</div>';
+    '<div class="v'+(v==null?' na':'')+'">'+(v==null?(semVenda?'sem vendas ainda':'sem dado'):def.f(v))+'</div>'+(semVenda?'<div class="d neutral"><small>'+(nA<14?'período curto para leitura de vendas':'nenhuma venda atribuída no período')+'</small></div>':delta(k,a,b,nA,nB))+(nota?'<div class="n">'+nota+'</div>':'')+'</div>';
 }
 function kpiFix(label, valor, o, plat, nota, na){
   return '<div class="kpi '+(plat||'')+'"><div class="l"><span>'+label+'</span>'+oTag(o)+'</div><div class="v'+(na?' na':'')+'">'+valor+'</div>'+(nota?'<div class="n">'+nota+'</div>':'')+'</div>';
@@ -543,22 +582,35 @@ function desenhar(){
 }
 function nice(m){ if (m<=0) return 1; var p=Math.pow(10,Math.floor(Math.log10(m))), n=m/p; return (n<=1?1:n<=2?2:n<=2.5?2.5:n<=5?5:10)*p; }
 function serie(el, cfg){
-  var W=Math.max(el.clientWidth,280), H=cfg.h||220, P={l:56,r:12,t:cfg.bands&&cfg.bands.length?24:10,b:28};
+  var W=Math.max(el.clientWidth,280), H=cfg.h||230, temTopo=(cfg.strips&&cfg.strips.length)||(cfg.marcos&&cfg.marcos.length);
+  var P={l:56,r:12,t:temTopo?46:12,b:28};
   var pts=cfg.pontos, n=pts.length; if (!n){ el.innerHTML=empty('Sem dados','Nenhum dado no intervalo.'); return; }
   var vals=pts.map(function(p){ return p.v; }).filter(function(v){ return v!=null; });
   var max=nice(Math.max.apply(null, vals.concat([0]))*1.05||1);
   var iw=W-P.l-P.r, ih=H-P.t-P.b, step=iw/n;
   function x(i){ return P.l+step*i+step/2; } function y(v){ return P.t+ih-(v/max)*ih; }
-  var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(cfg.titulo||'')+'">';
-  (cfg.bands||[]).forEach(function(b){
-    var i0=-1,i1=-1; pts.forEach(function(p,i){ if (p.x>=b.ini && p.x<=b.fim){ if (i0<0) i0=i; i1=i; } });
-    if (i0<0) return;
-    var bx=P.l+step*i0, bw=step*(i1-i0+1);
-    s+='<rect x="'+bx+'" y="'+(P.t-18)+'" width="'+bw+'" height="'+(ih+18)+'" fill="'+b.cor+'" rx="4"/>';
-    if (bw>60) s+='<text x="'+(bx+6)+'" y="'+(P.t-5)+'" style="font-weight:700;fill:'+(b.tcor||'#69717C')+'">'+esc(b.nome)+'</text>';
+  function dentro(p,ini,fim){ return cfg.semanal ? (p.x>=ini && addD(p.x,6)<=fim) : (p.x>=ini && p.x<=fim); }
+  function idx(ini,fim){ var a=-1,b=-1; pts.forEach(function(p,i){ if (dentro(p,ini,fim)){ if (a<0) a=i; b=i; } }); return [a,b]; }
+  var hid='h'+el.id;
+  var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(cfg.titulo||'')+'"><defs><pattern id="'+hid+'" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#F8F5EF"/><line x1="0" y1="0" x2="0" y2="7" stroke="#EBE3D4" stroke-width="2.5"/></pattern></defs>';
+  // faixas de contexto (ex.: preparação)
+  (cfg.faixas||[]).forEach(function(f){
+    var r=idx(f.ini,f.fim); if (r[0]<0) return;
+    var bx=P.l+step*r[0], bw=step*(r[1]-r[0]+1);
+    s+='<rect x="'+bx+'" y="'+P.t+'" width="'+bw+'" height="'+ih+'" fill="url(#'+hid+')" rx="4"/>';
+    var palavras=f.nome.split(' '), linhas=[], cur='', lim=Math.max(6,Math.floor(bw/6.3));
+    palavras.forEach(function(w){ if ((cur+' '+w).trim().length>lim && cur){ linhas.push(cur); cur=w; } else cur=(cur+' '+w).trim(); }); if (cur) linhas.push(cur);
+    if (bw>=34) linhas.forEach(function(l,k){ s+='<text x="'+(bx+bw/2)+'" y="'+(P.t+ih/2-(linhas.length-1)*7+k*14)+'" text-anchor="middle" style="font-size:10.5px;font-weight:700;fill:#8C7B5C">'+esc(l)+'</text>'; });
+  });
+  // faixas de período e comparação (barras finas no topo)
+  (cfg.strips||[]).forEach(function(b){
+    var r=idx(b.ini,b.fim); if (r[0]<0) return;
+    var bx=P.l+step*r[0], bw=step*(r[1]-r[0]+1);
+    s+='<rect x="'+bx+'" y="6" width="'+bw+'" height="5" rx="2.5" fill="'+b.cor+'"/>';
+    s+='<text x="'+bx+'" y="24" style="font-size:10.5px;font-weight:700;fill:'+b.cor+'">'+esc(bw>70?b.nome:b.nome.split(' ')[0])+'</text>';
   });
   s+='<g class="grid">';
-  for (var g=0; g<=4; g++){ var gv=max*g/4, gy=y(gv); s+='<line x1="'+P.l+'" x2="'+(W-P.r)+'" y1="'+gy+'" y2="'+gy+'"/><text x="'+(P.l-8)+'" y="'+(gy+4)+'" text-anchor="end">'+esc(cfg.eixo?cfg.eixo(gv):int(gv))+'</text>'; }
+  for (var g=0; g<=4; g++){ var gv=max*g/4, gy=y(gv); s+='<line x1="'+P.l+'" x2="'+(W-P.r)+'" y1="'+gy+'" y2="'+gy+'"/><text x="'+(P.l-8)+'" y="'+(gy+4)+'" text-anchor="end">'+esc(cfg.eixo?cfg.eixo(gv):(gv%1?'':int(gv)))+'</text>'; }
   s+='</g>';
   var every=Math.max(1,Math.ceil(n/(iw/58)));
   pts.forEach(function(p,i){ if (i%every===0) s+='<text x="'+x(i)+'" y="'+(H-8)+'" text-anchor="middle">'+esc(cfg.rotX?cfg.rotX(p.x):fds(p.x))+'</text>'; });
@@ -575,9 +627,18 @@ function serie(el, cfg){
       s+='<path d="M'+x0+' '+(P.t+ih)+'V'+(y0+rr)+'Q'+x0+' '+y0+' '+(x0+rr)+' '+y0+'H'+(x0+bw2-rr)+'Q'+(x0+bw2)+' '+y0+' '+(x0+bw2)+' '+(y0+rr)+'V'+(P.t+ih)+'Z" fill="'+(p.cor||cor)+'"/>';
     });
   }
-  s+='<line class="hover-line" id="'+el.id+'-hl" x1="0" x2="0" y1="'+P.t+'" y2="'+(P.t+ih)+'" style="display:none"/>';
+  // marcos (eventos)
+  var mk=[];
+  (cfg.marcos||[]).forEach(function(m){
+    var i0=-1; pts.forEach(function(p,i){ if (cfg.semanal ? (m.d>=p.x && m.d<=addD(p.x,6)) : p.x===m.d) i0=i; }); if (i0<0) return;
+    mk.push(m); var mx=x(i0);
+    s+='<line x1="'+mx+'" x2="'+mx+'" y1="'+(P.t-8)+'" y2="'+(P.t+ih)+'" stroke="#1E242C" stroke-width="1" stroke-dasharray="2 3" opacity=".55"/>';
+    s+='<circle cx="'+mx+'" cy="'+(P.t-12)+'" r="8" fill="#1E242C"/><text x="'+mx+'" y="'+(P.t-8.5)+'" text-anchor="middle" style="font-size:10px;font-weight:800;fill:#fff">'+mk.length+'</text>';
+  });
+  s+='<line class="hover-line" x1="0" x2="0" y1="'+P.t+'" y2="'+(P.t+ih)+'" style="display:none"/>';
   pts.forEach(function(p,i){ s+='<rect class="hit" data-i="'+i+'" x="'+(P.l+step*i)+'" y="'+P.t+'" width="'+step+'" height="'+ih+'"/>'; });
   s+='</svg><div class="tip"></div>';
+  if (mk.length) s+='<div class="marcos">'+mk.map(function(m,i){ return '<span><b>'+(i+1)+'</b>'+fds(m.d)+' · '+esc(m.rot)+'</span>'; }).join('')+'</div>';
   el.innerHTML=s;
   var tip=el.querySelector('.tip'), hl=el.querySelector('.hover-line');
   el.querySelectorAll('.hit').forEach(function(rc){
@@ -586,12 +647,56 @@ function serie(el, cfg){
   });
   el.querySelector('svg').addEventListener('mouseleave',function(){ tip.classList.remove('on'); hl.style.display='none'; });
   function mostrar(i){
-    var p=pts[i], sc=el.clientWidth/W;
-    tip.innerHTML=cfg.tip(p); tip.classList.add('on');
-    var tx=x(i)*sc; tx=Math.max(80,Math.min(el.clientWidth-80,tx));
+    var p=pts[i], sc=el.clientWidth/W, ctx='';
+    (cfg.faixas||[]).forEach(function(f){ if (dentro(p,f.ini,f.fim)) ctx='<br><i>'+esc(f.nome)+'</i>'; });
+    tip.innerHTML=cfg.tip(p)+ctx; tip.classList.add('on');
+    var tx=x(i)*sc; tx=Math.max(90,Math.min(el.clientWidth-90,tx));
     tip.style.left=tx+'px'; tip.style.top=((p.v!=null?y(p.v):P.t+ih)*sc-10)+'px';
     hl.setAttribute('x1',x(i)); hl.setAttribute('x2',x(i)); hl.style.display='';
   }
+}
+function narr(list){
+  if (!list||!list.length) return '';
+  return '<div class="narr">'+list.map(function(n){ return '<div><span class="nt">'+esc(n.t)+'<em class="'+n.k+'">'+(n.k==='hipotese'?'Hipótese':'Confirmado')+'</em></span><p>'+esc(n.x)+'</p></div>'; }).join('')+'</div>';
+}
+function faixasContexto(){ return REG.eventos.filter(function(v){ return v.tipo==='preparacao' && v.fim && platOk(v.plataforma); }).map(function(v){ return {ini:v.data,fim:v.fim,nome:v.titulo.replace(' de campanhas','')}; }); }
+function marcosEv(plat){ return REG.eventos.filter(function(v){ return v.marco && (v.plataforma===plat||v.plataforma==='ambas'); }).map(function(v){ return {d:v.data, rot:v.marco}; }); }
+/* ---------------------------------------------------------------- Seguidores no Instagram */
+var nf1 = new Intl.NumberFormat('pt-BR',{maximumFractionDigits:1});
+function igDias(){
+  if (!IG) return [];
+  var m={}; (IG.diario||[]).forEach(function(r){ m[r.d]={d:r.d,seg:r.seg,vis:r.vis,g:r.g,parcial:r.parcial}; });
+  // quando a exportação do Meta trouxer a coluna de seguidores, ela prevalece
+  if (META.colunas.indexOf('seg')>=0){ var por={}; ROWS.forEach(function(r){ if (r.seg) por[r.d]=(por[r.d]||0)+r.seg; });
+    Object.keys(por).forEach(function(d){ m[d]=m[d]||{d:d,vis:null,g:null}; m[d].seg=por[d]; m[d].parcial=false; }); }
+  return Object.keys(m).sort().map(function(k){ return m[k]; });
+}
+function igTot(ds){ var t={seg:0,vis:0,g:0,n:0}; ds.forEach(function(r){ t.seg+=r.seg||0; t.vis+=r.vis||0; t.g+=r.g||0; if (!r.parcial) t.n++; }); t.cps=t.seg?t.g/t.seg:null; t.cpv=t.vis?t.g/t.vis:null; return t; }
+function igJanela(ds){ var u=ds[ds.length-1]; return per(ds[0].d,u.d)+(u.parcial?' ('+fds(u.d)+' parcial)':''); }
+function igKpis(ds,curto){
+  var t=igTot(ds), p=IG.perfil||{};
+  var h=kpiFix('Novos seguidores pela campanha',int(t.seg),'D','meta',igJanela(ds))+kpiFix('Custo por seguidor',brl(t.cps),'C','meta')+
+    kpiFix('Visitas ao perfil',int(t.vis),'D','meta','Custo de '+brl(t.cpv)+' por visita');
+  if (!curto && p.antes){ var comp=ds.filter(function(r){ return !r.parcial; }), tc=igTot(comp);
+    h+=kpiFix('Seguidores por dia',nf1.format(tc.seg/tc.n),'C','meta','Antes da campanha: cerca de '+nf1.format(p.antes.novos/p.antes.dias)+' por dia (perfil, todas as origens)'); }
+  if (p.total) h+=kpiFix('Base de seguidores',int(p.total),'D','meta','Instagram, em '+fd(p.data));
+  return '<div class="kpis">'+h+'</div>';
+}
+function capSeguidores(e){
+  var ds=igDias(); if (!ds.length || S.plat==='google') return '';
+  var h=sec('Seguidores no Instagram','Um dos destaques do período. Números da campanha de seguidores no Gerenciador de Anúncios e dos Insights do Instagram.');
+  if (S.fim<ds[0].d) return h+'<p class="sec-sub">A campanha de seguidores começou em '+fd(ds[0].d)+', depois do período escolhido no filtro.</p>';
+  h+=igKpis(ds);
+  var ed=igTot(ds.filter(function(r){ return r.d<=e.periodo.fim; }));
+  if (ds[ds.length-1].d>e.periodo.fim) h+='<p class="note">'+ico(IC.info)+'<span>Até '+fd(e.periodo.fim)+', fim do período desta edição: '+int(ed.seg)+' seguidores e '+brl(ed.g)+' investidos. O dia '+fds(ds[ds.length-1].d)+' entra com os números do momento da consulta e ainda vai crescer.</span></p>';
+  var p=IG.perfil||{}, its=ds.map(function(r){ return {l:fds(r.d)+(r.parcial?' · parcial':''), v:r.seg, s:r.g?brl(r.g/r.seg)+' por seguidor':'', cor:r.parcial?'#F2B48C':'#E05E14'}; });
+  if (p.antes) its.push({l:'Média antes', full:'Média diária antes da campanha', v:p.antes.novos/p.antes.dias, s:'por dia, todas as origens, '+per(p.antes.ini,p.antes.fim), cor:'#9AA1AB'});
+  h+='<div class="grid g2"><div class="panel"><div class="chart-head"><h4>Novos seguidores por dia</h4></div>'+hbars(its,'#E05E14',function(v){ return v%1?nf1.format(v):int(v); })+
+    '<p class="sec-sub" style="margin:10px 0 0;font-size:11.5px">Laranja: seguidores vindos da campanha. Cinza: média diária do perfil antes da campanha, somando todas as origens. Em '+fds(ds[0].d)+', o perfil ganhou '+int(p.dia20)+' seguidores no total.</p></div>';
+  if (p.cidades) h+='<div class="panel"><div class="chart-head"><h4>Onde estão os seguidores</h4></div>'+hbars(p.cidades.map(function(c){ return {l:c[0], v:c[1]}; }),'#7D858F',function(v){ return pct(v,1); })+
+    '<p class="sec-sub" style="margin:10px 0 0;font-size:11.5px">Base total do perfil ('+int(p.total)+' seguidores). Brasil: '+pct(p.brasil,1)+'.</p></div>';
+  h+='</div>';
+  return h+narr((e.narrativas||{}).seguidores);
 }
 function hbars(itens, cor, fmt){
   var max=Math.max.apply(null,itens.map(function(i){ return i.v; }).concat([1]));
@@ -609,11 +714,12 @@ function render(){
   document.getElementById('edtitle').textContent=e.titulo;
   var nA=nDias(S.ini,S.fim), nB=S.cIni?nDias(S.cIni,S.cFim):0;
   var nota='<b>Período:</b> '+per(S.ini,S.fim)+' ('+nA+' dias)';
-  if (S.cIni) nota+=' · <b>Comparação:</b> '+per(S.cIni,S.cFim)+' ('+nB+' dias)';
+  if (S.cIni) nota+=' · <b>'+(S.cSel==='padrao'?'Referência':'Comparação')+':</b> '+per(S.cIni,S.cFim)+' ('+nB+' dias)';
+  document.getElementById('fresumo').textContent=per(S.ini,S.fim)+(S.cIni?' x '+per(S.cIni,S.cFim):'');
   if (S.corte) nota+=' · período cortado em '+fd(D1)+', último dia com dados';
   if (S.cIni && nA!==nB) nota+=' · durações diferentes: volumes comparados pela média diária';
   if (overlaps()) nota+=' · <span class="up-bad">os períodos se sobrepõem</span>';
-  document.getElementById('fnote').innerHTML=ico(IC.info).replace('<svg','<svg width="15" height="15" style="min-width:15px;margin-top:2px"')+'<span>'+nota+' · Textos de análise referem-se à edição; números seguem o filtro. Origem: '+['D','C','A','R'].map(function(o){ return oTag(o)+' '+ORIG[o].split(' ')[0].toLowerCase(); }).join(' · ')+'</span>';
+  document.getElementById('fnote').innerHTML=ico(IC.info).replace('<svg','<svg width="15" height="15" style="min-width:15px;margin-top:2px"')+'<span>'+nota+' · Os números seguem o filtro; as análises referem-se à edição. '+['D','C','A','R'].map(function(o){ return oTag(o)+' '+{D:'dado',C:'cálculo',A:'análise',R:'registro'}[o]; }).join(' ')+'</span>';
   document.getElementById('chapnav').innerHTML=CHAPS.map(function(c){ return '<a href="#'+e.id+'/'+c.id+'" class="'+(S.cap===c.id?'on':'')+'">'+(c.n?'<b>'+c.n+'</b>':'')+c.nome+'</a>'; }).join('');
   var fn={resumo:capResumo, meta:capMeta, mensuracao:capMensuracao, google:capGoogle, termos:capTermos, plano:capPlano, historico:capHistorico, dados:capDados};
   var i=CHAPS.map(function(c){return c.id;}).indexOf(S.cap);
@@ -622,6 +728,13 @@ function render(){
   root.innerHTML=html;
   desenhar();
   ligar();
+  alturaSticky();
+}
+function alturaSticky(){ var st=document.getElementById('sticky'); document.documentElement.style.setProperty('--stick-h', st.offsetHeight+'px'); return st.offsetHeight; }
+function irCapitulo(){
+  var h=root.querySelector('.chapter.on .ch-head'); if (!h) return;
+  var off=alturaSticky()+12, alvo=h.getBoundingClientRect().top+window.scrollY-off;
+  window.scrollTo({top:Math.max(0,alvo), left:0, behavior:'instant'});
 }
 function cabeca(n, t, lead){ return '<div class="ch-head"><div class="eyebrow">'+(n?'Capítulo '+n:'Consulta')+'</div><h2>'+t+'</h2>'+(lead?'<p class="ch-lead">'+lead+'</p>':'')+'</div>'; }
 
@@ -634,15 +747,18 @@ function capResumo(e,nA,nB){
   h+=sec('As oito perguntas da edição','Respostas curtas. Os capítulos seguintes trazem os números e a justificativa de cada uma.');
   h+='<div class="grid g2">'+(e.perguntas||[]).map(function(q,i){ return '<div class="qa"><div class="q"><b>'+(i+1)+'</b>'+esc(q.p)+'</div><p>'+esc(q.r)+'</p></div>'; }).join('')+'</div>';
   // Indicadores
-  h+=sec('Principais números','Meta Ads segue o filtro de período. Google Ads, por enquanto, só existe consolidado no período do arquivo.');
+  h+=sec('Período analisado e referência', esc(e.referencia||''));
+  h+=baseComp(A,B,nA,nB);
+  h+=sec('Principais números','Meta Ads segue o filtro de período. Google Ads está consolidado no período da exportação.');
   if (S.plat!=='google'){
     h+='<div class="plat meta" style="margin:4px 0 8px"><i></i>Meta Ads · '+per(S.ini,S.fim)+'</div>';
-    h+='<div class="kpis">'+['g','ck','cpc','cp','rv','roas','cpa'].map(function(k){ return kpi(k,A,B,nA,nB,'meta'); }).join('')+'</div>';
+    h+='<div class="kpis">'+['g','ck','cpc','cp','rv','roas'].map(function(k){ return kpi(k,A,B,nA,nB,'meta'); }).join('')+'</div>';
+    var igd=igDias(); if (igd.length && S.fim>=igd[0].d){ h+='<div class="plat meta" style="margin:18px 0 8px"><i></i>Instagram · campanha de seguidores · '+igJanela(igd)+'</div>'+igKpis(igd,true); }
   }
   if (S.plat!=='meta' && gt){
     h+='<div class="plat google" style="margin:18px 0 8px"><i></i>Google Ads · '+per(gs.ini,gs.fim)+' · consolidado</div>';
-    h+='<div class="kpis">'+kpiFix('Investimento',brl(gt.custo),'D','google')+kpiFix('Cliques',int(gt.cliques),'D','google')+kpiFix('CPC',brl(gt.cpc),'C','google')+
-      kpiFix('Conversões registradas',int(gt.conv),'D','google','Régua em revisão: ainda não são só compras')+kpiFix('ROAS','sem dado','','google','A exportação não trouxe valor de conversão',true)+'</div>';
+    h+='<div class="kpis">'+kpiFix('Investimento',brl(gt.custo),'D','google')+kpiFix('Visitas (cliques)',int(gt.cliques),'D','google')+kpiFix('Custo por clique',brl(gt.cpc),'C','google')+
+      kpiFix('Conversões registradas',int(gt.conv),'D','google','Mensuração em revisão (capítulo 3)')+kpiFix('Retorno (ROAS)','na próxima edição','','google','Depende do valor das vendas na exportação',true)+'</div>';
   }
   if (S.plat==='todas' && gt){
     var tot=A.g+(gs.ini>=S.ini&&gs.fim<=S.fim?gt.custo:0);
@@ -656,6 +772,13 @@ function capResumo(e,nA,nB){
   h+='<div>'+sec('Depende de decisão da Aldea')+'<ol class="prio">'+apr.map(function(p){ return '<li><span>'+esc(p.acao)+' <span class="badge a">'+esc(p.prazo||'')+'</span></span></li>'; }).join('')+'</ol></div></div>';
   return h;
 }
+function baseComp(A,B,nA,nB){
+  function camp(ini,fim){ var m={}; filtra(ini,fim).forEach(function(r){ if (r.g>0) m[r.c]=1; }); return Object.keys(m).length; }
+  var lin=[['Dias no período',nA,nB,int],['Dias com anúncios no Meta',A.diasAtivos,B?B.diasAtivos:null,int],['Campanhas ativas no Meta',camp(S.ini,S.fim),B?camp(S.cIni,S.cFim):null,int],['Investimento no Meta',A.g,B?B.g:null,brl],['Investimento médio por dia',A.g/nA,B?B.g/nB:null,brl]];
+  var h='<div class="ref"><div class="hd">&nbsp;</div><div class="hd">Período · '+per(S.ini,S.fim)+'</div><div class="hd">'+(B?(S.cSel==='padrao'?'Referência':'Comparação')+' · '+per(S.cIni,S.cFim):'Sem comparação')+'</div>';
+  lin.forEach(function(l){ h+='<div class="k">'+l[0]+'</div><div class="v">'+l[3](l[1])+'</div><div class="v">'+(l[2]==null?'—':l[3](l[2]))+'</div>'; });
+  return h+'</div>';
+}
 function platOk(p){ if (S.plat==='todas') return true; var s=(p||'').toLowerCase(); return S.plat==='meta' ? /meta|ambas/.test(s) : /google|ga4|ambas/.test(s); }
 
 /* ---------------------------------------------------------------- 2. Meta */
@@ -664,31 +787,32 @@ function capMeta(e,nA,nB){
   var A=agg(rA), B=S.cIni?agg(rB):null, t=e.textos.meta||{};
   var h=cabeca('2','Performance de Meta Ads','Investimento, eficiência, evolução, campanhas, públicos e criativos. Interpretação e recomendações ao fim de cada bloco.');
   if (!A.n) h+=warn('Sem entrega do Meta em '+per(S.ini,S.fim)+'. Escolha outro período no filtro.');
-  var atr={}; rA.forEach(function(r){ atr[r.at]=1; }); if (Object.keys(atr).length>1) h+=warn('Este período mistura janelas de atribuição ('+Object.keys(atr).join(', ')+'). As compras são somadas com essa ressalva. Veja "Dados e método".');
+  var atr={}; rA.forEach(function(r){ atr[r.at]=1; }); if (Object.keys(atr).length>1) h+='<p class="note">'+ico(IC.info)+'<span>Os resultados consideram critérios diferentes de atribuição de vendas aos anúncios, conforme a campanha. Por isso, algumas comparações pedem cautela. Detalhes em Dados e método.</span></p>';
   h+='<div class="kpis">'+['g','im','ck','ctr','cpc','cpm','atc','cp','rv','cpa','roas'].map(function(k){ return kpi(k,A,B,nA,nB,'meta'); }).join('')+'</div>';
+  h+=capSeguidores(e);
   // evolução
   var met=S.tab.metaMet||'g';
-  var MET={g:['Investimento',brl,'barra'],ck:['Cliques no link',int,'barra'],cpc:['CPC',brl,'linha'],ctr:['CTR',function(v){return pct(v);},'linha'],cp:['Compras',int,'barra']};
+  var MET={g:['Investimento',brl,'barra'],ck:['Visitas',int,'barra'],cpc:['Custo por clique',brl,'linha'],ctr:['Taxa de clique',function(v){return pct(v);},'linha'],cp:['Vendas',int,'barra']};
   var ini=S.cIni&&S.cIni<S.ini?S.cIni:S.ini, fim=S.cFim&&S.cFim>S.fim?S.cFim:S.fim, pts=[], dd=ini;
   var porDia={}; filtra(ini,fim).forEach(function(r){ (porDia[r.d]=porDia[r.d]||[]).push(r); });
   while (dd<=fim){ var a=agg(porDia[dd]||[]); pts.push({x:dd, v: MET[met][2]==='linha' ? a[met] : (a[met]||0), a:a}); dd=addD(dd,1); }
-  var bands=[{ini:S.ini,fim:S.fim,nome:'Período',cor:'rgba(255,122,51,.08)',tcor:'#E05E14'}];
-  if (S.cIni) bands.push({ini:S.cIni,fim:S.cFim,nome:'Comparação',cor:'rgba(154,161,171,.14)'});
-  h+=sec('Evolução diária','A faixa laranja é o período escolhido; a cinza, o de comparação. Passe o mouse ou toque nas barras para ver o dia.');
+  var strips=[{ini:S.ini,fim:S.fim,nome:'Período analisado',cor:'#E05E14'}];
+  if (S.cIni) strips.push({ini:S.cIni,fim:S.cFim,nome:S.cSel==='padrao'?'Referência':'Comparação',cor:'#7D858F'});
+  h+=sec('Evolução diária','Linhas no topo: período analisado e referência. Números: marcos da operação. Toque ou passe o mouse para ver cada dia.');
   h+='<div class="panel"><div class="chart-head"><h4>'+MET[met][0]+' por dia</h4><div class="tabs" data-tab="metaMet" style="margin:0">'+Object.keys(MET).map(function(k){ return '<button type="button" data-v="'+k+'" class="'+(k===met?'on':'')+'">'+MET[k][0]+'</button>'; }).join('')+'</div></div>';
-  h+=chart('chMetaDia',{pontos:pts,tipo:MET[met][2]==='linha'?'linha':'barra',bands:bands,titulo:MET[met][0]+' por dia',eixo:met==='g'?function(v){return 'R$ '+nf0.format(v);}:met==='cpc'?function(v){return 'R$ '+nf2.format(v);}:met==='ctr'?function(v){return nf0.format(v)+'%';}:null,
-    tip:function(p){ var a=p.a; return '<b>'+fd(p.x)+'</b><br>Investimento '+brl(a.g)+'<br>Cliques '+int(a.ck)+' · CTR '+pct(a.ctr)+'<br>CPC '+brl(a.cpc)+' · Compras '+int(a.cp)+(a.n?'':'<br><i>sem entrega</i>'); }});
-  h+='</div>';
+  h+=chart('chMetaDia',{pontos:pts,tipo:MET[met][2]==='linha'?'linha':'barra',strips:strips,faixas:faixasContexto(),marcos:marcosEv('meta'),titulo:MET[met][0]+' por dia',eixo:met==='g'?function(v){return 'R$ '+nf0.format(v);}:met==='cpc'?function(v){return 'R$ '+nf2.format(v);}:met==='ctr'?function(v){return nf0.format(v)+'%';}:null,
+    tip:function(p){ var a=p.a; return '<b>'+fd(p.x)+'</b><br>Investimento '+brl(a.g)+'<br>Cliques '+int(a.ck)+' · Taxa de clique '+pct(a.ctr)+'<br>Custo por clique '+brl(a.cpc)+' · Vendas '+int(a.cp)+(a.n?'':'<br><i>sem anúncios no ar</i>'); }});
+  h+=narr((e.narrativas||{}).metaDia)+'</div>';
   // semanas
   var sem=grupo(filtra(ini,fim),function(r){ return semana(r.d); }).sort(function(a,b){ return a.k<b.k?-1:1; });
   h+=sec('Evolução semanal','Semanas de segunda a domingo. Útil para enxergar tendência sem o ruído do dia a dia.');
   h+=tabela('metaSem',[
     {t:'Semana',l:1,f:function(r){ return per(r.k,addD(r.k,6)); }},
     {t:'Investimento',k:'g',f:function(r){return brl(r.g);}},{t:'Dias c/ entrega',k:'diasAtivos',f:function(r){return r.diasAtivos;}},
-    {t:'Cliques',k:'ck',f:function(r){return int(r.ck);}},{t:'CTR',k:'ctr',f:function(r){return pct(r.ctr);}},{t:'CPC',k:'cpc',f:function(r){return brl(r.cpc);}},
-    {t:'Carrinho',k:'atc',f:function(r){return int(r.atc);}},{t:'Compras',k:'cp',f:function(r){return int(r.cp);}},{t:'Receita',k:'rv',f:function(r){return brl(r.rv);}},{t:'ROAS',k:'roas',f:function(r){return dec(r.roas);}}
+    {t:'Visitas',k:'ck',f:function(r){return int(r.ck);}},{t:'Taxa clique',k:'ctr',f:function(r){return pct(r.ctr);}},{t:'Custo/clique',k:'cpc',f:function(r){return brl(r.cpc);}},
+    {t:'Carrinho',k:'atc',f:function(r){return int(r.atc);}},{t:'Vendas',k:'cp',f:function(r){return int(r.cp);}},{t:'Receita',k:'rv',f:function(r){return brl(r.rv);}},{t:'Retorno',k:'roas',f:function(r){return dec(r.roas);}}
   ],sem,{sort:null});
-  h+=sec('Leitura do período','O que explica os movimentos acima.')+insGrid(t.leitura,'g2');
+  h+=sec('Leitura do período','O que os números mostram e o que explica os movimentos.')+insGrid(t.leitura,'g2');
   // funil
   h+=sec('Funil','Da impressão à compra, no período e na comparação. Taxas calculadas sobre a etapa anterior.');
   h+='<div class="grid g2">'+funil(A,'Período · '+per(S.ini,S.fim),'#E05E14')+(B?funil(B,'Comparação · '+per(S.cIni,S.cFim),'#9AA1AB'):'<div class="empty"><b>Sem comparação</b>Escolha um período de comparação no filtro.</div>')+'</div>';
@@ -707,26 +831,26 @@ function capMeta(e,nA,nB){
     {t:'Investimento',k:'g',f:function(r){return brl(r.g);},tf:function(t){return brl(t.g);}},
     {t:'% verba',k:'g',f:function(r){return pct(A.g?r.g/A.g*100:null,0);}},
     {t:'Impr.',k:'im',f:function(r){return int(r.im);},tf:function(t){return int(t.im);}},
-    {t:'Cliques',k:'ck',f:function(r){return int(r.ck);},tf:function(t){return int(t.ck);}},
-    {t:'CTR',k:'ctr',f:function(r){return pct(r.ctr);},tf:function(t){return pct(t.ctr);}},
-    {t:'CPC',k:'cpc',f:function(r){return brl(r.cpc);},tf:function(t){return brl(t.cpc);}},
+    {t:'Visitas',k:'ck',f:function(r){return int(r.ck);},tf:function(t){return int(t.ck);}},
+    {t:'Taxa clique',k:'ctr',f:function(r){return pct(r.ctr);},tf:function(t){return pct(t.ctr);}},
+    {t:'Custo/clique',k:'cpc',f:function(r){return brl(r.cpc);},tf:function(t){return brl(t.cpc);}},
     {t:'Carrinho',k:'atc',f:function(r){return int(r.atc);},tf:function(t){return int(t.atc);}},
-    {t:'Compras',k:'cp',f:function(r){return int(r.cp);},tf:function(t){return int(t.cp);}},
+    {t:'Vendas',k:'cp',f:function(r){return int(r.cp);},tf:function(t){return int(t.cp);}},
     {t:'Receita',k:'rv',f:function(r){return brl(r.rv);},tf:function(t){return brl(t.rv);}},
-    {t:'CPA',k:'cpa',f:function(r){return brl(r.cpa);},tf:function(t){return brl(t.cpa);}},
-    {t:'ROAS',k:'roas',f:function(r){return dec(r.roas);},tf:function(t){return dec(t.roas);}},
+    {t:'Custo/venda',k:'cpa',f:function(r){return brl(r.cpa);},tf:function(t){return brl(t.cpa);}},
+    {t:'Retorno',k:'roas',f:function(r){return dec(r.roas);},tf:function(t){return dec(t.roas);}},
     {t:'Conversas',k:'msg',f:function(r){return int(r.msg);},tf:function(t){return int(t.msg);}}
   ],gr,{sort:'g',total:A});
-  h+='<p class="sec-sub mt"><span class="badge g">Destaque</span> maior ROAS entre os que venderam, ou melhor CTR com pelo menos 1.000 impressões (fora campanhas de engajamento, que compram clique barato por natureza). <span class="badge r">Atenção</span> R$ 50 ou mais sem compra em campanha de vendas ou tráfego, ou CTR abaixo de 1,5% com 1.000 impressões. Com poucas compras no período, um destaque pode vir de uma única venda.</p>';
+  h+='<p class="sec-sub mt"><span class="badge g">Destaque</span> maior retorno entre os que venderam, ou melhor taxa de clique com pelo menos 1.000 impressões (fora campanhas de engajamento, que compram clique barato por natureza). <span class="badge a">Atenção</span> R$ 50 ou mais e 14 dias no ar sem venda, em campanha de vendas ou tráfego, ou taxa de clique abaixo de 1,5% com 1.000 impressões. Com poucas compras no período, um destaque pode vir de uma única venda.</p>';
   h+=sec('Públicos','Leitura dos conjuntos de anúncios e do que eles dizem sobre quem responde.')+insGrid(t.audiencias,'g3');
   // criativos
   var cri=grupo(rA.filter(function(r){ return r.v25>0||adId(r.a); }),function(r){ var x=adId(r.a); return x?x.id+' · '+objetivo(r.c):r.a; }).filter(function(g){ return g.v25>0; });
-  h+=sec('Criativos em vídeo','Retenção dos vídeos no período. "Chegam a 25%" é a parcela das impressões que assistiu a pelo menos um quarto do vídeo; "vão até o fim" é a parcela desses que viu 100%.');
+  h+=sec('Criativos em vídeo','Quanto cada vídeo prende a atenção: "chegam a 25%" é a parcela das impressões que viu ao menos um quarto do vídeo; "vão até o fim", a parcela desses que assistiu tudo.');
   h+=cri.length?tabela('metaCri',[
     {t:'Criativo · campanha',l:1,f:function(r){ return '<div class="nm">'+esc(r.k)+'</div>'; }},
     {t:'Impr.',k:'im',f:function(r){return int(r.im);}},{t:'Chegam a 25%',k:'h25',f:function(r){return pct(r.h25,1);}},
-    {t:'Vão até o fim',k:'ret',f:function(r){return pct(r.ret,0);}},{t:'CTR',k:'ctr',f:function(r){return pct(r.ctr);}},
-    {t:'CPC',k:'cpc',f:function(r){return brl(r.cpc);}},{t:'Engajamentos',k:'eng',f:function(r){return int(r.eng);}}
+    {t:'Vão até o fim',k:'ret',f:function(r){return pct(r.ret,0);}},{t:'Taxa clique',k:'ctr',f:function(r){return pct(r.ctr);}},
+    {t:'Custo/clique',k:'cpc',f:function(r){return brl(r.cpc);}},{t:'Engajamentos',k:'eng',f:function(r){return int(r.eng);}}
   ],cri,{sort:'im'}):empty('Sem vídeos no período','Nenhum anúncio com reprodução de vídeo no intervalo.');
   h+='<div class="mt">'+insGrid(t.criativos,'g2')+'</div>';
   h+=sec('Redistribuição de investimento')+insGrid(t.redistribuicao,'g2');
@@ -741,8 +865,8 @@ function marcar(gr){
     var f=[];
     if (g===best) f.push('<span class="badge g">Destaque · ROAS</span>');
     if (g===ctrB && g!==best) f.push('<span class="badge g">Destaque · CTR</span>');
-    if (g.g>=50 && g.cp===0 && (g.obj==='Vendas'||g.obj==='Tráfego')) f.push('<span class="badge r">Atenção · sem compra</span>');
-    else if (g.im>=1000 && g.ctr<1.5) f.push('<span class="badge r">Atenção · CTR baixo</span>');
+    if (g.g>=50 && g.cp===0 && g.diasAtivos>=14 && (g.obj==='Vendas'||g.obj==='Tráfego')) f.push('<span class="badge a">Atenção · sem venda</span>');
+    else if (g.im>=1000 && g.ctr<1.5 && g.obj!=='Engajamento') f.push('<span class="badge a">Atenção · clique baixo</span>');
     g.flag=f.length?' '+f.join(' '):'';
   });
 }
@@ -782,11 +906,11 @@ function capMensuracao(e){
   h+=sec('Período de transição','Até a data de corte, conversões do Google de antes e de depois não se comparam.');
   var corte=(REG.eventos.filter(function(v){ return v.tipo==='mensuracao' && v.corte; })[0]||{}).corte;
   h+='<div class="panel"><div class="trans"><div class="line"></div><div class="seg" style="left:0;width:55%;background:#C7CCD3"></div><div class="seg" style="left:55%;width:30%;background:repeating-linear-gradient(45deg,#FFD9C2 0 6px,#FFF1E8 6px 12px)"></div><div class="seg" style="left:85%;width:15%;background:var(--green)"></div>'+
-    '<div class="pt" style="left:3%">01/09<i></i>Régua antiga</div><div class="pt" style="left:55%">14/10<i></i>Nova estrutura</div><div class="pt" style="left:85%">'+(corte?fds(corte):'Corte: a confirmar')+'<i></i>Régua nova</div></div>'+
+    '<div class="pt" style="left:3%">01/09<i></i>Régua antiga</div><div class="pt" style="left:55%">14/10<i></i>Nova estrutura</div><div class="pt" style="left:85%">'+(corte?fds(corte):'Data de corte')+'<i></i>Régua nova</div></div>'+
     '<p class="sec-sub" style="margin:22px 0 0">'+esc(m.transicao)+'</p></div>';
   h+=sec('O que muda e o que não muda na leitura');
   h+='<div class="grid g2"><div class="panel"><h4 style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:8px">Afetado pela régua</h4><ul class="chk"><li>Conversões e taxa de conversão</li><li>Custo por conversão (CPA)</li><li>Valor de conversão e ROAS</li><li>Lance automático por conversão</li></ul></div>'+
-    '<div class="panel"><h4 style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:8px">Não depende da régua</h4><ul class="chk"><li>Impressões e parcela de impressões</li><li>Cliques e CTR</li><li>CPC e investimento</li><li>Termos de pesquisa</li></ul></div></div>';
+    '<div class="panel"><h4 style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:8px">Não depende da régua</h4><ul class="chk"><li>Impressões e parcela de impressões</li><li>Cliques e taxa de clique</li><li>Custo por clique e investimento</li><li>Termos de pesquisa</li></ul></div></div>';
   h+=sec('Rastreamento ou venda real?','Antes de concluir que algo caiu, separar o que é régua do que é resultado.');
   h+=insGrid(m.indicio,'g3');
   h+='<div class="panel mt"><h4 style="font-size:14.5px;font-weight:800;margin-bottom:10px">Para validar (próximo report)</h4><ul class="chk">'+(m.validar||[]).map(function(v){ return '<li>'+esc(v)+'</li>'; }).join('')+'</ul></div>';
@@ -803,9 +927,9 @@ function capGoogle(e){
   if (!gs) return h+empty('Sem dados do Google','Nenhuma exportação do Google Ads foi carregada.');
   var gt=googleTot(gs.linhas);
   if (gs.ini!==S.ini || gs.fim!==S.fim) h+=warn('Os dados do Google estão disponíveis só consolidados de <b>'+per(gs.ini,gs.fim)+'</b>. O filtro de período não se aplica a este capítulo até chegar a exportação diária.');
-  h+='<div class="kpis">'+kpiFix('Investimento',brl(gt.custo),'D','google')+kpiFix('Impressões',int(gt.impr),'D','google')+kpiFix('Cliques',int(gt.cliques),'D','google')+kpiFix('CTR',pct(gt.ctr),'C','google')+kpiFix('CPC',brl(gt.cpc),'C','google')+
-    kpiFix('Conversões registradas',int(gt.conv),'D','google','Incluem eventos intermediários até a régua nova')+kpiFix('Custo por conversão registrada',brl(gt.cpa),'C','google','Não é custo por venda')+
-    kpiFix('ROAS',gt.roas==null?'sem dado':dec(gt.roas),gt.roas==null?'':'C','google',gt.roas==null?'Falta a coluna Valor conv.':'',gt.roas==null)+'</div>';
+  h+='<div class="kpis">'+kpiFix('Investimento',brl(gt.custo),'D','google')+kpiFix('Impressões',int(gt.impr),'D','google')+kpiFix('Cliques',int(gt.cliques),'D','google')+kpiFix('Taxa de clique',pct(gt.ctr),'C','google')+kpiFix('Custo por clique',brl(gt.cpc),'C','google')+
+    kpiFix('Conversões registradas',int(gt.conv),'D','google','Mensuração em revisão (capítulo 3)')+kpiFix('Custo por conversão registrada',brl(gt.cpa),'C','google','Ainda não equivale a custo por venda')+
+    kpiFix('Retorno (ROAS)',gt.roas==null?'na próxima edição':dec(gt.roas),gt.roas==null?'':'C','google',gt.roas==null?'Depende do valor das vendas na exportação':'',gt.roas==null)+'</div>';
   var ls=gs.linhas.slice().sort(function(a,b){ return b.custo-a.custo; });
   h+=sec('Para onde foi o investimento','Participação de cada campanha no custo do período.');
   h+='<div class="panel">'+hbars(ls.filter(function(l){return l.custo>0;}).map(function(l){ return {l:l.campanha.replace(/^VENDAS_/,'').replace(/_AON_PROPS_/,' · '), full:l.campanha, v:l.custo, s:pct(l.custo/gt.custo*100,1)+' do total', cor:'#3E6FB0'}; }),'#3E6FB0',brl)+'</div>';
@@ -820,13 +944,15 @@ function capGoogle(e){
     {t:'% verba',k:'share',f:function(r){return pct(r.share,1);}},
     {t:'Impr.',k:'impr',f:function(r){return int(r.impr);},tf:function(){return int(gt.impr);}},
     {t:'Cliques',k:'cliques',f:function(r){return int(r.cliques);},tf:function(){return int(gt.cliques);}},
-    {t:'CTR',k:'ctr',f:function(r){return r.impr?pct(r.ctr):'—';},tf:function(){return pct(gt.ctr);}},
-    {t:'CPC',k:'cpc',f:function(r){return r.cliques?brl(r.cpc):'—';},tf:function(){return brl(gt.cpc);}},
+    {t:'Taxa clique',k:'ctr',f:function(r){return r.impr?pct(r.ctr):'—';},tf:function(){return pct(gt.ctr);}},
+    {t:'Custo/clique',k:'cpc',f:function(r){return r.cliques?brl(r.cpc):'—';},tf:function(){return brl(gt.cpc);}},
     {t:'Topo da página',k:'imprTopo',f:function(r){return r.impr&&r.tipo==='Pesquisa'?pct(r.imprTopo,1):'—';}},
     {t:'Conv. registradas',k:'conv',f:function(r){return dec(r.conv);},tf:function(){return dec(gt.conv);}},
     {t:'Custo/conv.',k:'custoConv',f:function(r){return r.conv?brl(r.custoConv):'—';}},
     {t:'Taxa de conv.',k:'taxaConv',f:function(r){return r.cliques?pct(r.taxaConv):'—';}}
-  ],ls,{sort:'custo',total:{}});
+  ],ls.filter(function(l){ return l.custo>0; }),{sort:'custo',total:{}});
+  var zero=ls.filter(function(l){ return !l.custo; });
+  if (zero.length) h+='<p class="note">'+ico(IC.info)+'<span>Sem investimento no período: '+zero.map(function(l){ return esc(l.campanha)+' ('+esc(l.status.toLowerCase())+')'; }).join(', ')+'.</span></p>';
   h+=sec('Leitura das campanhas')+insGrid(t.leitura,'g2');
   // outros níveis, quando existirem
   ['grupos','palavras','termos','acoes'].forEach(function(nv){
@@ -835,7 +961,7 @@ function capGoogle(e){
     if (c) h+=sec(nome+' · '+per(c.ini,c.fim))+genTabela('g-'+nv,c);
   });
   h+=sec('Oportunidades de orçamento, segmentação e estrutura')+insGrid(t.oportunidades,'g2');
-  if (t.faltam && t.faltam.length) h+=sec('Dados que ainda faltam','Quando chegarem, entram automaticamente neste capítulo, sem mudar o layout.')+tabela('gFalta',[{t:'Análise',l:1,f:function(r){return '<b>'+esc(r.item)+'</b>';}},{t:'Como exportar no Google Ads',l:1,cls:'wrap',f:function(r){return esc(r.como);}},{t:'Situação',l:1,f:function(r){ return disponivel(r.item)?'<span class="badge g">Recebido</span>':'<span class="badge a">Aguardando</span>'; }}],t.faltam,{});
+  if (t.faltam && t.faltam.length) h+=sec('Próximas camadas de análise','Entram neste capítulo automaticamente, a partir das próximas exportações.')+tabela('gFalta',[{t:'Análise',l:1,f:function(r){return '<b>'+esc(r.item)+'</b>';}},{t:'Como exportar no Google Ads',l:1,cls:'wrap',f:function(r){return esc(r.como);}},{t:'Situação',l:1,f:function(r){ return disponivel(r.item)?'<span class="badge g">Recebido</span>':'<span class="badge a">Aguardando</span>'; }}],t.faltam,{});
   return h;
 }
 function disponivel(item){
@@ -860,8 +986,8 @@ function capTermos(e){
   var t=e.textos.negativacao||{};
   var h=cabeca('5','Termos de pesquisa e negativação','O que as pessoas digitaram no Google antes de clicar, o que recomendamos bloquear e o que já foi decidido. Nada é aplicado na conta antes da validação de Marina, Flávio ou Juliano.');
   h+=sec('O que já sabemos sobre a rotina atual')+insGrid(t.sabemos,'g2');
-  h+=sec('Para alinhar na reunião','Respostas entram no registro da próxima edição.');
-  h+='<div class="panel"><ul class="chk">'+(t.perguntas||[]).map(function(p){ return '<li>'+esc(p)+'</li>'; }).join('')+'</ul></div>';
+  h+=sec('Para alinhar na reunião','Marque o que foi alinhado e anote a decisão. As respostas entram no registro da próxima edição.');
+  h+=pauta(e,(e.pauta||[]).slice(0,5),'termos');
   h+=sec('Rotina proposta','Semanal, com a mesma sequência toda vez.');
   h+='<div class="steps">'+(t.rotina||[]).map(function(r){ return '<div><b>'+esc(r.t)+'</b>'+esc(r.x)+'</div>'; }).join('')+'</div>';
   h+=sec('Critérios para recomendar uma negativação');
@@ -887,6 +1013,44 @@ function capTermos(e){
   return h;
 }
 
+/* ---------------------------------------------------------------- Pauta (checklist da reunião) */
+function chave(e,id){ return 'aldea_rp_'+e.id+'_'+id; }
+function ler(k){ try { return localStorage.getItem(k); } catch(x){ return null; } }
+function gravar(k,v){ try { if (v==null||v==='') localStorage.removeItem(k); else localStorage.setItem(k,v); return true; } catch(x){ return false; } }
+function pauta(e,itens,ctx){
+  if (!itens.length) return '';
+  var feitos=itens.filter(function(q){ return ler(chave(e,q.id))==='1'; }).length;
+  var h='<div class="pauta" data-pauta="'+ctx+'"><div class="pauta-top"><span><b data-cont>'+feitos+' de '+itens.length+'</b> itens alinhados · salvo neste navegador</span><span><button class="linkbtn" type="button" data-copiar>Copiar anotações</button> · <button class="linkbtn" type="button" data-limpar>Limpar marcações</button></span></div>';
+  itens.forEach(function(q){
+    var ok=ler(chave(e,q.id))==='1', nota=ler(chave(e,q.id+'_nota'))||'';
+    h+='<div class="pq'+(ok?' done':'')+'" data-q="'+q.id+'"><label><input type="checkbox" '+(ok?'checked':'')+' aria-label="Marcar como alinhado"><span class="tx">'+esc(q.p)+'</span><span class="st badge '+(ok?'g':'a')+'">'+(ok?'Alinhado':'Pendente')+'</span></label>'+
+      '<div class="wrapnota">'+(nota?'':'<button class="add" type="button">+ Anotar decisão</button>')+'<textarea placeholder="Observação ou decisão" '+(nota?'':'hidden')+'>'+esc(nota)+'</textarea></div></div>';
+  });
+  return h+'</div>';
+}
+function ligarPauta(){
+  var e=ed();
+  root.querySelectorAll('.pauta').forEach(function(box){
+    function contar(){ var t=box.querySelectorAll('.pq').length, f=box.querySelectorAll('.pq.done').length; box.querySelector('[data-cont]').textContent=f+' de '+t; }
+    box.querySelectorAll('.pq').forEach(function(q){
+      var id=q.getAttribute('data-q'), cb=q.querySelector('input'), ta=q.querySelector('textarea'), add=q.querySelector('.add'), st=q.querySelector('.st');
+      cb.onchange=function(){ q.classList.toggle('done',cb.checked); st.className='st badge '+(cb.checked?'g':'a'); st.textContent=cb.checked?'Alinhado':'Pendente'; gravar(chave(e,id),cb.checked?'1':null); contar(); };
+      if (add) add.onclick=function(){ ta.hidden=false; add.remove(); ta.focus(); };
+      var tm; ta.oninput=function(){ clearTimeout(tm); tm=setTimeout(function(){ gravar(chave(e,id+'_nota'),ta.value.trim()); },300); };
+    });
+    box.querySelector('[data-copiar]').onclick=function(){
+      var linhas=[].map.call(box.querySelectorAll('.pq'),function(q){ var ok=q.querySelector('input').checked, n=q.querySelector('textarea').value.trim(); return (ok?'[x] ':'[ ] ')+q.querySelector('.tx').textContent+(n?'\n    '+n:''); });
+      var txt='Report '+String(e.numero).padStart(2,'0')+' · pauta da reunião\n\n'+linhas.join('\n');
+      (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(function(){ toast('Anotações copiadas'); },function(){ window.prompt('Copie o texto:',txt); });
+    };
+    box.querySelector('[data-limpar]').onclick=function(){
+      if (!window.confirm('Limpar as marcações e anotações desta pauta neste navegador?')) return;
+      box.querySelectorAll('.pq').forEach(function(q){ var id=q.getAttribute('data-q'); gravar(chave(e,id),null); gravar(chave(e,id+'_nota'),null); });
+      var y=window.scrollY; render(); window.scrollTo(0,y);
+    };
+  });
+}
+
 /* ---------------------------------------------------------------- 6. Plano */
 var PST = {'Realizada':'ok','Em andamento':'b','Recomendada':'o','Aguardando aprovação':'a','Rejeitada':'r'};
 function capPlano(e){
@@ -896,6 +1060,8 @@ function capPlano(e){
   var cont={todas:lista.length}; lista.forEach(function(p){ cont[p.grupo]=(cont[p.grupo]||0)+1; });
   var h=cabeca('6','Plano de ação e próximos passos','Tudo o que saiu das análises, separado entre o que já foi feito, o que a Molla recomenda executar e o que depende de decisão da Aldea.');
   h+='<div class="kpis">'+['feita','recomendada','aprovacao'].map(function(g){ return kpiFix(G[g],int(cont[g]||0),'R'); }).join('')+'</div>';
+  h+=sec('Pauta da reunião','Checklist para acompanhar o que foi discutido. Nada vem marcado: cada item é marcado durante a reunião.')+pauta(e,e.pauta||[],'plano');
+  h+=sec('Ações','Já realizadas, recomendadas pela Molla e as que dependem da Aldea.');
   h+='<div class="tabs mt" data-tab="planoG">'+Object.keys(G).map(function(g){ return '<button type="button" data-v="'+g+'" class="'+(g===f?'on':'')+'">'+G[g]+'<span>'+(cont[g]||0)+'</span></button>'; }).join('')+'</div>';
   var ordem={Alta:0,'Média':1,Baixa:2}, vis=lista.filter(function(p){ return f==='todas'||p.grupo===f; }).sort(function(a,b){ return (a.grupo===b.grupo?0:(a.grupo==='feita'?-1:b.grupo==='feita'?1:0)) || (ordem[a.prioridade]-ordem[b.prioridade]); });
   h+=vis.length?'<div class="cards">'+vis.map(function(p){
@@ -916,13 +1082,14 @@ function capHistorico(e){
   // tendências
   var sem=grupo(ROWS,function(r){ return semana(r.d); }).sort(function(a,b){ return a.k<b.k?-1:1; });
   var all=[], w=semana(D0); while (w<=D1){ var f=sem.filter(function(s){ return s.k===w; })[0]||agg([]); all.push({x:w,a:f}); w=addD(w,7); }
-  h+=sec('Tendência semanal do Meta Ads','Todo o histórico disponível, semana a semana. Semanas sem entrega aparecem vazias.');
-  var M=[['g','Investimento',brl,'barra'],['ck','Cliques no link',int,'barra'],['cpc','CPC',brl,'linha'],['cp','Compras',int,'barra']];
-  var bandas=(e.fases||[]).map(function(f,i){ return {ini:semana(f.ini),fim:semana(f.fim),nome:'',cor:i%2?'rgba(154,161,171,.10)':'rgba(255,122,51,.06)'}; });
-  h+='<div class="grid g2">'+M.map(function(m){ return '<div class="mini"><h5>'+m[1]+' por semana</h5>'+chart('chH-'+m[0],{h:170,tipo:m[3]==='linha'?'linha':'barra',pontos:all.map(function(p){ return {x:p.x,v:m[3]==='linha'?p.a[m[0]]:(p.a[m[0]]||0),a:p.a}; }),eixo:m[0]==='g'?function(v){return 'R$ '+nf0.format(v);}:m[0]==='cpc'?function(v){return 'R$ '+nf2.format(v);}:null,rotX:fds,titulo:m[1],
+  h+=sec('Tendência semanal do Meta Ads','Todo o histórico disponível, semana a semana (segunda a domingo). A faixa marca a preparação da nova estrutura; a última semana ainda está em andamento.');
+  var M=[['g','Investimento',brl,'barra'],['ck','Visitas',int,'barra'],['cpc','Custo por clique',brl,'linha'],['cp','Vendas',int,'barra']];
+
+  h+='<div class="grid g2">'+M.map(function(m){ return '<div class="mini"><h5>'+m[1]+' por semana</h5>'+chart('chH-'+m[0],{h:190,semanal:1,faixas:faixasContexto().map(function(f){ return {ini:f.ini,fim:f.fim,nome:'Preparação'}; }),marcos:marcosEv('meta'),tipo:m[3]==='linha'?'linha':'barra',pontos:all.map(function(p){ return {x:p.x,v:m[3]==='linha'?p.a[m[0]]:(p.a[m[0]]||0),a:p.a}; }),eixo:m[0]==='g'?function(v){return 'R$ '+nf0.format(v);}:m[0]==='cpc'?function(v){return 'R$ '+nf2.format(v);}:null,rotX:fds,titulo:m[1],
     tip:function(p){ return '<b>Semana de '+per(p.x,addD(p.x,6))+'</b><br>'+m[1]+': '+m[2](p.v); }})+'</div>'; }).join('')+'</div>';
+  h+='<div class="panel mt">'+narr((e.narrativas||{}).tendencia).replace('class="narr"','class="narr" style="margin:0;padding:0;border:0"')+'</div>';
   h+=sec('Acontecimentos','Mudanças em campanhas, mensuração e método, em ordem de data.');
-  var tf=S.tab.evTipo||'todos', T={todos:'Todos',campanha:'Campanhas',mensuracao:'Mensuração',metodologia:'Método',marco:'Marcos'};
+  var tf=S.tab.evTipo||'todos', T={todos:'Todos',campanha:'Campanhas',preparacao:'Preparação',mensuracao:'Mensuração',metodologia:'Método',marco:'Marcos'};
   h+='<div class="tabs" data-tab="evTipo">'+Object.keys(T).map(function(k){ return '<button type="button" data-v="'+k+'" class="'+(k===tf?'on':'')+'">'+T[k]+'</button>'; }).join('')+'</div>';
   h+=linhaTempo(REG.eventos.filter(function(v){ return (tf==='todos'||v.tipo===tf) && platOk(v.plataforma); }));
   h+=sec('Decisões e mudanças de status','Tudo o que mudou nas recomendações de negativação e no plano de ação, do mais recente ao mais antigo.');
@@ -937,22 +1104,23 @@ function capHistorico(e){
 }
 function linhaTempo(evs){
   if (!evs.length) return empty('Nada registrado','Nenhum acontecimento com este filtro.');
-  var T={campanha:'Campanha',mensuracao:'Mensuração',metodologia:'Método',marco:'Marco'};
+  var T={campanha:'Campanha',preparacao:'Preparação',mensuracao:'Mensuração',metodologia:'Método',marco:'Marco'};
   return '<div class="tl">'+evs.slice().sort(function(a,b){ return a.data<b.data?1:a.data>b.data?-1:0; }).map(function(v){
     return '<div class="ev '+v.tipo+'"><div class="top"><span>'+(v.fim?per(v.data,v.fim):fd(v.data))+'</span><span class="badge n">'+T[v.tipo]+'</span><span class="plat '+v.plataforma+'"><i></i>'+({meta:'Meta',google:'Google',ambas:'Meta e Google'}[v.plataforma])+'</span>'+oTag(v.origem)+(v.pendente?'<span class="badge a">Em aberto</span>':'')+'</div><h4>'+esc(v.titulo)+'</h4><p>'+esc(v.texto)+'</p></div>';
   }).join('')+'</div>';
 }
 
 /* ---------------------------------------------------------------- Dados e método */
+function ctxLacuna(l){ return REG.eventos.filter(function(v){ return v.fim && v.data<=l[0] && v.fim>=l[1]; })[0]; }
 function capDados(e){
   var h=cabeca('','Dados e método','De onde vêm os números, o que foi conferido e as regras usadas para comparar períodos.');
   h+=sec('Origem de cada informação','Todo número e todo texto do report leva uma destas marcas.');
-  h+='<div class="grid g4">'+['D','C','A','R'].map(function(o){ return '<div class="panel"><div style="display:flex;gap:8px;align-items:center">'+oTag(o)+'<b style="font-size:14px">'+ORIG[o]+'</b></div><p class="sec-sub" style="margin:6px 0 0">'+{D:'Copiado da exportação, sem alteração.',C:'Conta feita sobre dados fornecidos (CTR, CPC, CPA, ROAS, taxas).',A:'Leitura da Molla. Pode ser contestada e revisada.',R:'Fato informado pela Molla: lançamentos, mudanças, decisões.'}[o]+'</p></div>'; }).join('')+'</div>';
-  var fontes=(META.fontes||[]).concat(GOOG.fontes||[]);
+  h+='<div class="grid g4">'+['D','C','A','R'].map(function(o){ return '<div class="panel"><div style="display:flex;gap:8px;align-items:center">'+oTag(o)+'<b style="font-size:14px">'+ORIG[o]+'</b></div><p class="sec-sub" style="margin:6px 0 0">'+{D:'Copiado da exportação, sem alteração.',C:'Conta feita sobre dados fornecidos (taxa de clique, custo por clique, custo por venda, retorno).',A:'Leitura da Molla. Pode ser contestada e revisada.',R:'Fato informado pela Molla: lançamentos, mudanças, decisões.'}[o]+'</p></div>'; }).join('')+'</div>';
+  var fontes=(META.fontes||[]).concat(IG?IG.fontes||[]:[]).concat(GOOG.fontes||[]);
   h+=sec('Arquivos recebidos','Os originais ficam guardados pela Molla. A conferência compara o total do arquivo com a soma das linhas.');
   h+=tabela('fontes',[{t:'Plataforma',l:1,f:function(r){return '<span class="plat '+r.plataforma+'"><i></i>'+(r.plataforma==='meta'?'Meta':'Google')+'</span>';}},{t:'Arquivo',l:1,cls:'wrap',f:function(r){return esc(r.arquivo)+(r.observacao?'<br><small class="dim">'+esc(r.observacao)+'</small>':'');}},
     {t:'Período',l:1,f:function(r){return per(r.ini,r.fim);}},{t:'Recebido',l:1,f:function(r){return fd(r.recebido);}},{t:'Nível',l:1,f:function(r){return esc(r.nivel);}},{t:'Linhas',f:function(r){return int(r.linhas);}},
-    {t:'Investimento',f:function(r){return brl(r.gastoSoma);}},{t:'Conferência',l:1,f:function(r){ return r.plataforma==='meta'?(r.confere?'<span class="badge g">Total confere</span>':'<span class="badge r">Diverge</span>'):(r.gastoArquivo==null?'<span class="badge n">Sem linha de total</span>':''); }}],fontes,{});
+    {t:'Investimento',f:function(r){return brl(r.gastoSoma);}},{t:'Conferência',l:1,f:function(r){ return r.conferencia?'<span class="badge n">'+esc(r.conferencia)+'</span>':r.plataforma==='meta'?(r.confere?'<span class="badge g">Total confere</span>':'<span class="badge r">Diverge</span>'):(r.gastoArquivo==null?'<span class="badge n">Sem linha de total</span>':''); }}],fontes,{});
   // verificações automáticas
   var chaves={}, dup=0; ROWS.forEach(function(r){ var k=[r.d,r.c,r.s,r.a,r.p].join('|'); if (chaves[k]) dup++; chaves[k]=1; });
   var lacunas=[], d=D0, ativo={}; ROWS.forEach(function(r){ if (r.g>0) ativo[r.d]=1; });
@@ -961,14 +1129,14 @@ function capDados(e){
   var gf=(GOOG.fontes||[]);
   var checks=[
     {ok:dup===0, t:'Duplicidade no Meta', x:dup===0?'Nenhuma linha repetida (dia, campanha, conjunto, anúncio e posicionamento).':dup+' linhas repetidas encontradas.'},
-    {ok:lacunas.length===0, t:'Dias sem entrega no Meta', x:lacunas.length?lacunas.map(function(l){ return per(l[0],l[1])+' ('+nDias(l[0],l[1])+' dias)'; }).join(' · '):'Nenhum dia sem entrega no intervalo.'},
-    {ok:Object.keys(atr).length<2, t:'Janelas de atribuição', x:Object.keys(atr).map(function(k){ return k+' ('+atr[k]+' linhas)'; }).join(' · ')+'. 7C = clique de 7 dias · 1V = visualização de 1 dia · 1VE = visualização com engajamento de 1 dia · 1C = clique de 1 dia.'},
+    {ok:lacunas.every(function(l){ return ctxLacuna(l); }), t:'Períodos sem anúncios no Meta', x:lacunas.length?lacunas.map(function(l){ var c=ctxLacuna(l); return per(l[0],l[1])+' ('+nDias(l[0],l[1])+' dias)'+(c?': '+c.titulo.toLowerCase()+' (registrado)':': contexto a registrar'); }).join(' · '):'Anúncios no ar em todos os dias do intervalo.'},
+    {ok:Object.keys(atr).length<2, t:'Critérios de atribuição', x:'As campanhas usam critérios diferentes para atribuir uma venda a um anúncio. Detalhe técnico: '+Object.keys(atr).map(function(k){ return k+' ('+atr[k]+' linhas)'; }).join(' · ')+'. 7C = clique em até 7 dias · 1V = visualização em até 1 dia · 1VE = visualização com engajamento em até 1 dia · 1C = clique em até 1 dia.'},
     {ok:false, t:'Alcance', x:'Alcance não se soma entre dias e anúncios (a mesma pessoa aparece em vários). O report usa apenas o alcance único informado no total do arquivo: '+int((META.fontes[0]||{}).alcanceUnicoArquivo)+' pessoas no período do arquivo.'},
     {ok:gf.every(function(f){ return f.temDia; }), t:'Google por dia', x:gf.every(function(f){ return f.temDia; })?'Exportação diária disponível.':'Exportação só consolidada: sem evolução diária e sem separação antes e depois da régua nova.'},
     {ok:gf.some(function(f){ return f.temValorConversao; }), t:'Valor de conversão do Google', x:gf.some(function(f){ return f.temValorConversao; })?'Disponível.':'Ausente: ROAS e receita do Google não podem ser calculados.'}
   ];
   h+=sec('Verificações automáticas','Rodam toda vez que a página abre, sobre os dados atuais.');
-  h+='<div class="grid g2">'+checks.map(function(c){ return '<div class="ins '+(c.ok?'bom':'atencao')+'"><div class="h"><span class="tag">'+ico(c.ok?IC.bom:IC.atencao)+(c.ok?'Ok':'Atenção')+'</span>'+oTag('C')+'</div><h4>'+c.t+'</h4><p>'+esc(c.x)+'</p></div>'; }).join('')+'</div>';
+  h+='<div class="grid g2">'+checks.map(function(c){ return '<div class="ins '+(c.ok?'bom':'neutro')+'"><div class="h"><span class="tag">'+ico(c.ok?IC.bom:IC.info)+(c.ok?'Ok':'Observação')+'</span>'+oTag('C')+'</div><h4>'+c.t+'</h4><p>'+esc(c.x)+'</p></div>'; }).join('')+'</div>';
   // fotografia
   var fA=e.fotografia&&e.fotografia.meta, now=agg(filtra(e.periodo.ini,e.periodo.fim));
   if (fA){
@@ -978,7 +1146,7 @@ function capDados(e){
   }
   h+=sec('Regras de comparação');
   h+='<div class="panel"><ul class="chk">'+[
-    'Períodos com durações diferentes são comparados pela média diária nos volumes (investimento, cliques, compras). Taxas (CTR, CPC, CPA, ROAS) são comparadas direto.',
+    'Períodos com durações diferentes são comparados pela média diária nos volumes (investimento, cliques, compras). Taxas (taxa de clique, custos médios e retorno) são comparadas diretamente.',
     'O padrão é comparar com o período anterior de mesma duração. Em edições mensais, também com o mesmo período do mês anterior.',
     'Se a comparação não teve entrega, o report diz isso em vez de mostrar variação.',
     'Períodos que se sobrepõem são sinalizados no topo da página.',
@@ -993,8 +1161,8 @@ function capDados(e){
     {m:'Mensal',c:'Mês anterior e mesmo período do mês anterior',f:'Análise executiva, comparativos e planejamento do mês seguinte.',cap:'Todos, com redistribuição de verba e revisão do plano'}],{});
   h+=sec('Definições');
   h+=tabela('def',[{t:'Indicador',l:1,f:function(r){return '<b>'+r[0]+'</b>';}},{t:'Como é calculado',l:1,cls:'wrap',f:function(r){return r[1];}}],[
-    ['CTR','Cliques no link ÷ impressões'],['CPC','Investimento ÷ cliques no link'],['CPM','Investimento ÷ impressões × 1.000'],
-    ['Custo por compra (CPA)','Investimento ÷ compras atribuídas'],['ROAS','Receita atribuída ÷ investimento'],['Compra por clique','Compras ÷ cliques no link'],
+    ['Taxa de clique (CTR)','Cliques no link ÷ impressões'],['Custo por clique (CPC)','Investimento ÷ cliques no link'],['Custo por mil impressões (CPM)','Investimento ÷ impressões × 1.000'],['Custo por seguidor','Investimento da campanha de seguidores ÷ seguidores no Instagram que ela trouxe'],
+    ['Custo por venda (CPA)','Investimento ÷ vendas atribuídas'],['Retorno (ROAS)','Receita atribuída ÷ investimento. 2,0 = cada R$ 1 investido trouxe R$ 2 em vendas atribuídas'],['Venda por clique','Vendas ÷ cliques no link'],
     ['Chegam a 25%','Reproduções de 25% do vídeo ÷ impressões'],['Vão até o fim','Reproduções de 100% ÷ reproduções de 25%'],
     ['Conversões registradas (Google)','Coluna Conversões do Google Ads. Até a régua nova, pode incluir carrinho e checkout.']],{});
   h+=sec('Como uma nova edição entra','Fluxo de atualização a cada reunião.');
@@ -1013,6 +1181,7 @@ function ligar(){
       TBL[id]={k:k, dir:st.k===k?-st.dir:-1}; var y=window.scrollY; render(); window.scrollTo(0,y);
     }); });
   });
+  ligarPauta();
   var cp=document.getElementById('copiarNeg');
   if (cp) cp.onclick=function(){
     var pend=REG.negativacao.filter(function(n){ return n.status==='Pendente'; });
@@ -1045,6 +1214,14 @@ document.getElementById('comp').onchange=function(){
 };
 ['pIni','pFim','cIni','cFim'].forEach(function(id){ var el=document.getElementById(id); el.min=D0; el.max=D1; el.onchange=render; });
 document.getElementById('edicao').onchange=function(){ location.hash=this.value+'/'+S.cap; };
+document.getElementById('ftoggle').onclick=function(){ var st=document.getElementById('sticky'), on=!st.classList.contains('open'); st.classList.toggle('open',on); this.setAttribute('aria-expanded',on); alturaSticky(); };
+document.addEventListener('click',function(ev){
+  var a=ev.target.closest('a[href^="#"]'); if (!a) return;
+  var alvo=a.getAttribute('href');
+  S.rolar=true;
+  if (alvo===location.hash){ ev.preventDefault(); irCapitulo(); S.rolar=false; }
+  var st=document.getElementById('sticky'); if (window.innerWidth<=680 && st.classList.contains('open')){ st.classList.remove('open'); document.getElementById('ftoggle').setAttribute('aria-expanded','false'); }
+});
 document.getElementById('imprimir').onclick=function(){
   var cap=S.cap, html='';
   CH=[]; resolvePeriodo();
@@ -1063,11 +1240,14 @@ function rota(){
   S.ed=e; S.cap=CHAPS.some(function(c){ return c.id===cap; })?cap:(mudou?'resumo':S.cap);
   if (mudou){ S.pSel=e.padrao?'padrao':'edicao'; S.cSel=e.padrao&&e.padrao.comp?'padrao':'anterior'; document.getElementById('edicao').value=e.id; preencherSelects(); document.getElementById('pCustom').hidden=true; document.getElementById('cCustom').hidden=true; }
   render();
-  if (!mudou || cap) { var st=document.getElementById('sticky'); if (window.scrollY>st.offsetTop) window.scrollTo(0,st.offsetTop); }
+  if (S.rolar || (S.primeira && cap)) irCapitulo();
+  S.rolar=false; S.primeira=false;
 }
 if (!EDS.length){ root.innerHTML='<div class="empty"><b>Nenhuma edição publicada</b>Os reports aparecem aqui assim que a primeira edição for cadastrada.</div>'; return; }
 document.getElementById('edicao').innerHTML=EDS.map(function(x){ return '<option value="'+x.id+'">Report '+String(x.numero).padStart(2,'0')+' · '+({semanal:'Semanal',quinzenal:'Quinzenal',mensal:'Mensal'}[x.tipo]||x.tipo)+' · '+per(x.periodo.ini,x.periodo.fim)+'</option>'; }).join('');
 window.addEventListener('hashchange',rota);
+S.primeira=true;
+if ('scrollRestoration' in history) history.scrollRestoration='manual';
 rota();
 })();
 </script>
