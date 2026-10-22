@@ -27,7 +27,7 @@ window.CATEGORIAS = [
   {
     id: 'reports',
     nome: 'Reports',
-    descricao: 'Relatórios quinzenais e mensais de resultado das campanhas.',
+    descricao: 'Reports semanais, quinzenais e mensais de Meta Ads e Google Ads, com histórico.',
     icone: 'M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6'
   },
   {
@@ -39,6 +39,15 @@ window.CATEGORIAS = [
 ];
 
 window.MATERIAIS = [
+  {
+    titulo: 'Report de Performance · Mídia paga',
+    resumo: 'Resultados de Meta Ads e Google Ads, mudanças na mensuração, termos de pesquisa, recomendações e decisões. Cada edição fica guardada no histórico.',
+    categoria: 'reports',
+    arquivo: 'materiais/report-performance.html',
+    data: '2026-10-22',
+    dataTexto: 'Report 01 · Outubro de 2026',
+    detalhes: ['Período 01/09 a 21/10/2026', 'Linha de base e 1ª semana da nova estrutura']
+  },
   {
     titulo: 'Curadoria de conteúdos para mídia paga',
     resumo: 'Quais conteúdos já publicados no Instagram da Aldea podem entrar nas campanhas agora, quais precisam de ajuste e quais seguem no orgânico.',
