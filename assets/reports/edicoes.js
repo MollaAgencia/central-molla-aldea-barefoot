@@ -55,7 +55,7 @@ window.RP_EDICOES = [
         itens: [
           { k: 'bom', o: 'C', t: 'Mais visitas por real investido', x: '51% mais visitas por dia, com investimento diário 19% menor que em setembro.' },
           { k: 'bom', o: 'C', t: 'O A2 abre portas', x: 'Melhor taxa de clique em público novo: 2,54%, a R$ 1,27 por visita.' },
-          { k: 'bom', o: 'C', t: 'O A3 prende a atenção', x: '13,6% das impressões chegam a 25% do vídeo: a melhor retenção da conta.' },
+          { k: 'bom', o: 'C', t: 'O A3 prende a atenção', x: 'Melhor retenção nas duas campanhas em que roda: até 13,6% das impressões chegam a 25% do vídeo.' },
           { k: 'bom', o: 'C', t: 'Seguidor a R$ 0,50', x: '58 seguidores atribuídos aos anúncios em três dias: público novo a custo baixo.' },
           { k: 'oportunidade', o: 'A', t: 'Quem já quis comprar', x: 'Carrinho e checkout ainda sem campanha própria. Os carrosséis A5 e A7 estão prontos.' },
           { k: 'oportunidade', o: 'A', t: 'Google medindo venda', x: 'Com a revisão da mensuração, o Google passa a ser lido por custo por venda real.' }
@@ -69,9 +69,14 @@ window.RP_EDICOES = [
 
     narrativas: {
       metaDia: [
-        { t: 'O que aconteceu', k: 'confirmado', x: 'Setembro rodou com a estrutura anterior. De 03/10 a 14/10, preparação sem anúncios. Em 15/10, a nova estrutura começou a veicular.' },
-        { t: 'Por quê', k: 'confirmado', x: 'A pausa foi usada para revisar audiências, mensuração e criativos antes da nova fase.' },
-        { t: 'Implicação', k: 'hipotese', x: 'Mais visitas por dia com investimento menor. Se elas viram vendas é a pergunta do próximo report.' }
+        { t: 'O que aconteceu', k: 'confirmado', x: 'Setembro na estrutura anterior. De 03 a 14/10, preparação. Em 15/10, nova estrutura no ar.' },
+        { t: 'Por quê', k: 'confirmado', x: 'A pausa preparou audiências, mensuração e criativos.' },
+        { t: 'Implicação', k: 'hipotese', x: 'Mais visitas por dia com menos verba. Vendas: leitura no próximo report.' }
+      ],
+      seguidores: [
+        { t: 'O que aconteceu', k: 'confirmado', x: 'Perfil: 29 novos seguidores em 20/10, contra média de 3,2 por dia antes.' },
+        { t: 'Por quê', k: 'hipotese', x: 'Coincide com o início da campanha, que teve 23 seguidores atribuídos no mesmo dia.' },
+        { t: 'Implicação', k: 'hipotese', x: 'Base maior para o remarketing, a R$ 0,50 por seguidor. Ritmo a confirmar nos próximos dias.' }
       ],
       tendencia: [
         { t: 'O que aconteceu', k: 'confirmado', x: 'Investimento estável em setembro, com o pico de vendas na semana de 14 a 20/09 (Semana do Cliente). Após a preparação, a nova estrutura retoma o investimento em ritmo um pouco menor: R$ 32 por dia, contra R$ 40 em setembro.' },
@@ -127,34 +132,37 @@ window.RP_EDICOES = [
         'Validar com a Aldea as negativas e a rotina semanal de termos.'
       ],
       meta: {
-        leitura: [
-          { k: 'neutro', o: 'C', t: 'Setembro, a referência', x: 'R$ 1.188,03 em 30 dias, 5 vendas e R$ 2.603,57 em receita: custo por venda de R$ 237,61 e retorno de 2,19 vezes. A melhor semana foi a de 14 a 20/09, com a Semana do Cliente.' },
-          { k: 'bom', o: 'C', t: 'Um anúncio concentrou o resultado', x: '"MOFU Frio 01" recebeu 26% da verba de setembro e trouxe 3 das 5 vendas, com retorno de 5,2 vezes. É o modelo de mensagem e público a levar adiante.' },
-          { k: 'neutro', o: 'A', t: 'Aprendizado da estrutura anterior', x: 'O público frio vendeu mais que o quente: o remarketing amplo não converteu como esperado. Por isso a nova estrutura separa quem visitou o site de quem chegou ao carrinho.' },
-          { k: 'neutro', o: 'R', t: 'Preparação da nova estrutura', x: 'De 03/10 a 14/10, sem anúncios no ar: o período foi dedicado a audiências, mensuração e adequação dos criativos.' },
-          { k: 'bom', o: 'C', t: 'Primeira semana: mais tráfego por real investido', x: 'Custo médio por clique de R$ 0,80, contra R$ 1,50 em setembro. Parte do ganho vem da campanha de seguidores; na campanha de tráfego, o clique custou R$ 1,79, com objetivo diferente das campanhas de vendas de setembro.' },
-          { k: 'neutro', o: 'A', t: 'Leitura com amostra curta', x: 'Foram 6 vendas em todo o período. O custo por venda de cada anúncio vem de uma ou duas vendas: serve como sinal, não como conclusão.' }
+        // números grandes da leitura do período (v: valor, t: o que é, s: comparação)
+        numeros: [
+          { k: 'bom', o: 'C', v: '40 por dia', t: 'visitas ao site', s: 'setembro: 26 por dia' },
+          { k: 'bom', o: 'C', v: 'R$ 0,80', t: 'por clique, na média', s: 'setembro: R$ 1,50 · só a campanha de tráfego: R$ 1,79' },
+          { k: 'neutro', o: 'C', v: '3 de 5', t: 'vendas de setembro vieram de um anúncio', s: '"MOFU Frio 01", com retorno de 5,2 vezes' },
+          { k: 'neutro', o: 'A', v: '14 dias', t: 'para a primeira leitura de vendas', s: 'hoje: 7 dias e R$ 224,59 na nova estrutura' }
         ],
-        audiencias: [
-          { k: 'bom', o: 'C', t: 'Interesses (público novo)', x: 'Taxa de clique de 2,54% e custo de R$ 1,27 por visita com o A2. É onde a verba de tráfego rende mais visitas hoje.' },
-          { k: 'neutro', o: 'C', t: 'Visitantes do site (remarketing)', x: 'Custo de R$ 2,98 por clique, esperado para um público menor e já qualificado. O papel desse público é converter, não gerar volume; o ajuste é de criativo e de segmentação.' },
-          { k: 'oportunidade', o: 'A', t: 'Próximo passo: separar por intenção', x: 'Em setembro, o público frio rendeu mais que o quente. Separar quem chegou ao carrinho ou ao checkout tende a concentrar a verba de remarketing em quem está mais perto da compra.' }
+        // uma linha por público e por criativo, abaixo dos cartões
+        publicos: {
+          'Interesses (prospecção)': 'Onde a verba de tráfego rende mais visitas hoje.',
+          'Visitantes do site (remarketing)': 'Público menor e já qualificado: o papel é converter, não gerar volume.',
+          'Carrinho e checkout (remarketing)': 'Quem está mais perto da compra.'
+        },
+        criativos: {
+          A2: 'O início do vídeo funciona para gerar visita.',
+          A3: 'Bom para apresentar a marca a públicos novos.',
+          A4: 'No remarketing, os carrosséis A5 e A7 são a alternativa.'
+        },
+        proximosCriativos: [
+          { id: 'A5', nome: 'Drop zero', st: 'Pronto' },
+          { id: 'A7', nome: 'Não precisa amortecer', st: 'Pronto' },
+          { id: 'A1', nome: 'Princípios', st: 'Com a chegada dos vídeos' },
+          { id: 'A6', nome: 'Palmilhas', st: 'Com a chegada dos vídeos' }
         ],
-        criativos: [
-          { k: 'bom', o: 'C', t: 'A3 · O que é barefoot', x: 'Melhor retenção: 13,6% das impressões chegam a 25% do vídeo. Bom candidato para apresentar a marca a públicos novos.' },
-          { k: 'bom', o: 'C', t: 'A2 · Dor no joelho', x: 'Melhor taxa de clique na campanha de tráfego (2,54%) e clique mais barato (R$ 1,27). O início do vídeo funciona bem para gerar visita.' },
-          { k: 'oportunidade', o: 'C', t: 'A4 · Devolva a seu pé', x: 'O estático tem taxa de clique de 1,44% no remarketing. Os carrosséis A5 e A7 são a alternativa natural para esse público.' },
-          { k: 'neutro', o: 'D', t: 'Próximos criativos', x: 'A5 (Drop zero) e A7 (Não precisa amortecer) estão prontos. A1 (Princípios) e A6 (Palmilhas) entram com a chegada dos vídeos.' }
-        ],
-        redistribuicao: [
-          { k: 'oportunidade', o: 'A', t: 'Criativo antes de verba no remarketing', x: 'Os conjuntos de público novo e de visitantes receberam verbas parecidas (R$ 100,70 e R$ 101,40). Antes de mexer na divisão, vale trocar o A4 pelos carrosséis e separar quem chegou ao carrinho.' },
-          { k: 'oportunidade', o: 'A', t: 'Verba acompanha o criativo vencedor', x: 'Após o teste A2 x A3 em públicos novos, a verba da prospecção segue o vídeo com melhor custo por visita qualificada.' }
-        ],
-        recomendacoes: [
-          { k: 'oportunidade', o: 'A', t: 'Remarketing de carrinho e checkout', x: 'Últimos 14 dias, carrosséis A5 e A7, chamada para compra.' },
-          { k: 'oportunidade', o: 'A', t: 'Teste A2 x A3 em públicos novos', x: 'Mesma verba, leitura em 14 dias por custo por visita e adições ao carrinho.' },
-          { k: 'neutro', o: 'A', t: 'Eventos de compra validados', x: 'Parte da revisão de mensuração: conferir carrinho, checkout e compra antes da primeira leitura de vendas.' },
-          { k: 'neutro', o: 'A', t: 'Critério de leitura', x: 'Vendas lidas a partir de 14 dias e cerca de R$ 450 por campanha. Antes disso, acompanhamos clique, custo por visita e carrinho.' }
+        // q: molla (Molla executa) · aldea (depende da Aldea) · criterio (regra de leitura)
+        acoes: [
+          { q: 'molla', t: 'Remarketing de carrinho e checkout', x: 'Carrosséis A5 e A7 para quem chegou ao carrinho nos últimos 14 dias.' },
+          { q: 'molla', t: 'Teste A2 x A3 em públicos novos', x: 'Mesma verba. Vence o menor custo por visita com carrinho.' },
+          { q: 'molla', t: 'Verba segue o vencedor', x: 'Depois do teste, a prospecção concentra no melhor vídeo.' },
+          { q: 'molla', t: 'Criativo antes de verba no remarketing', x: 'Trocar o A4 pelos carrosséis antes de mexer na divisão.' },
+          { q: 'criterio', t: 'Vendas lidas a partir de 14 dias', x: 'Até lá: clique, custo por visita e carrinho.' }
         ]
       },
       mensuracao: {
@@ -175,17 +183,16 @@ window.RP_EDICOES = [
         ]
       },
       google: {
-        leitura: [
-          { k: 'neutro', o: 'C', t: 'Período concentrado na estrutura anterior', x: 'A Search anterior respondeu por 80% do investimento, natural num período em que seis das sete semanas foram antes da nova estrutura. Taxa de clique de 6,85% e custo por clique de R$ 1,91.' },
-          { k: 'bom', o: 'C', t: 'Nova Search com anúncios relevantes', x: 'Nos primeiros dias, Barefoot teve 5,79% de taxa de clique e Transição, 11,11%. São sinais de que os anúncios conversam com o que a pessoa buscou. O volume ainda é inicial.' },
-          { k: 'neutro', o: 'C', t: 'Geração de demanda', x: 'R$ 152,14 e 332 cliques a cerca de R$ 0,46: tráfego de custo baixo, de público que ainda não conhece a marca.' },
-          { k: 'neutro', o: 'D', t: 'Shopping', x: 'A vitrine de produtos do Google fica para quando o estoque de Preto e Cinza permitir.' }
+        numeros: [
+          { k: 'neutro', o: 'C', v: '80%', t: 'da verba na Search anterior', s: '6 das 7 semanas foram antes da nova estrutura' },
+          { k: 'bom', o: 'C', v: '11,11%', t: 'taxa de clique da nova Search · Transição', s: 'Barefoot: 5,79% · volume ainda inicial' },
+          { k: 'neutro', o: 'C', v: 'R$ 0,46', t: 'por clique na geração de demanda', s: '332 cliques com R$ 152,14' }
         ],
-        oportunidades: [
-          { k: 'oportunidade', o: 'A', t: 'Verba nas buscas de maior intenção', x: 'Concentrar o investimento em quem procura barefoot, transição e a própria marca, onde a chance de compra é maior.' },
-          { k: 'oportunidade', o: 'A', t: 'Migração gradual da Search', x: 'Transferir a verba da Search anterior para a nova estrutura à medida que as novas campanhas ganham volume.' },
-          { k: 'oportunidade', o: 'A', t: 'Shopping com estoque', x: 'O tênis tem foto e preço fortes para a vitrine do Google. Depende do feed com numeração disponível.' },
-          { k: 'neutro', o: 'A', t: 'Lances automáticos com vendas reais', x: 'Passar para lances por conversão depois da régua nova e com volume (referência: 15 compras em 30 dias numa campanha).' }
+        acoes: [
+          { q: 'molla', t: 'Verba nas buscas de maior intenção', x: 'Barefoot, transição e marca: onde a compra está mais perto.' },
+          { q: 'molla', t: 'Migração gradual da Search', x: 'A verba passa para a nova estrutura conforme ela ganha volume.' },
+          { q: 'aldea', t: 'Shopping com estoque', x: 'Entra quando o feed tiver a numeração de Preto e Cinza.' },
+          { q: 'criterio', t: 'Lances por conversão depois', x: 'Com a régua nova e volume (referência: 15 compras em 30 dias).' }
         ],
         faltam: [
           { item: 'Evolução diária', como: 'Relatório de campanhas com a coluna Dia.' },
