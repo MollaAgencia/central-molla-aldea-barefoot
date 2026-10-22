@@ -18,7 +18,8 @@ window.RP_INSTAGRAM = {
     data: '2026-10-22',
     total: 1230,
     antes: { ini: '2026-08-01', fim: '2026-10-19', novos: 257, dias: 80 },
-    dia20: 29,
+    // dias com dado do perfil depois do início da campanha (o Instagram mostra com 2 dias de atraso)
+    recentes: [ { d: '2026-10-20', v: 29 } ],
     cidades: [['São Paulo, SP',19.5],['Rio de Janeiro, RJ',8.3],['Florianópolis, SC',4.8],['Curitiba, PR',2.6],['Belo Horizonte, MG',1.9],
               ['Porto Alegre, RS',1.9],['Salvador, BA',1.3],['Campinas, SP',1.2],['Balneário Camboriú, SC',1.1],['Fortaleza, CE',1.1]],
     brasil: 95.5

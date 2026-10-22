@@ -11,6 +11,7 @@
     referencia texto curto explicando a base de comparação
     fases      etapas do período; aparecem no filtro e como faixas nos gráficos
     fotografia números-chave no dia da publicação (o report avisa se a base mudar depois)
+    exec       textos curtos dos 4 capítulos: estavamos {lead, pontos}, agora {lead}, aprendizados {lead, itens, publico}, proximos {lead}
     narrativas leitura dos gráficos: o que aconteceu, por quê, implicação (k: 'confirmado' | 'hipotese')
     pauta      perguntas da reunião (checklist interativo; nunca vem marcado)
     textos     análise por capítulo. Cada item: { k: tipo, o: origem, t: título, x: texto }
@@ -39,16 +40,38 @@ window.RP_EDICOES = [
       instagram: { seguidores: 58, ate21: 45, gasto: 29.22, visitasPerfil: 196, base: 1230, consulta: '2026-10-22' }
     },
 
+    exec: {
+      estavamos: {
+        lead: 'Setembro de 2026 é a referência: o mês completo mais recente desde o início da parceria, ainda com a estrutura de campanhas anterior.',
+        pontos: [
+          { k: 'neutro', o: 'C', t: 'Vendas concentradas em um anúncio', x: '"MOFU Frio 01" trouxe 3 das 5 vendas de setembro, com retorno de 5,2 vezes.' },
+          { k: 'neutro', o: 'A', t: 'Remarketing amplo', x: 'O público frio vendeu mais que o quente. Faltava separar quem chegou ao carrinho.' },
+          { k: 'neutro', o: 'R', t: 'Mensuração do Google', x: 'Conversões registradas não equivaliam a vendas. A revisão começou em 14/10.' }
+        ]
+      },
+      agora: { lead: 'Primeira semana da nova estrutura comparada com setembro: mais tráfego por real investido e o Instagram ganhando seguidores.' },
+      aprendizados: {
+        lead: 'Os sinais que orientam as próximas decisões.',
+        itens: [
+          { k: 'bom', o: 'C', t: 'Mais visitas por real investido', x: '51% mais visitas por dia, com investimento diário 19% menor que em setembro.' },
+          { k: 'bom', o: 'C', t: 'O A2 abre portas', x: 'Melhor taxa de clique em público novo: 2,54%, a R$ 1,27 por visita.' },
+          { k: 'bom', o: 'C', t: 'O A3 prende a atenção', x: '13,6% das impressões chegam a 25% do vídeo: a melhor retenção da conta.' },
+          { k: 'bom', o: 'C', t: 'Seguidor a R$ 0,50', x: '58 seguidores atribuídos aos anúncios em três dias: público novo a custo baixo.' },
+          { k: 'oportunidade', o: 'A', t: 'Quem já quis comprar', x: 'Carrinho e checkout ainda sem campanha própria. Os carrosséis A5 e A7 estão prontos.' },
+          { k: 'oportunidade', o: 'A', t: 'Google medindo venda', x: 'Com a revisão da mensuração, o Google passa a ser lido por custo por venda real.' }
+        ],
+        publico: [
+          { k: 'oportunidade', o: 'A', t: 'Base concentrada em três cidades', x: 'São Paulo, Rio de Janeiro e Florianópolis somam 32,6% dos seguidores. Pode orientar testes de segmentação regional.' }
+        ]
+      },
+      proximos: { lead: 'O que a Molla executa agora e o que depende de decisão da Aldea.' }
+    },
+
     narrativas: {
       metaDia: [
-        { t: 'O que aconteceu', k: 'confirmado', x: 'Setembro rodou com a estrutura anterior. De 03/10 a 14/10, a operação preparou a nova estrutura, sem anúncios no ar. Em 15/10 começou a veiculação das novas campanhas.' },
-        { t: 'Por quê', k: 'confirmado', x: 'A pausa foi usada para revisar audiências, mensuração e criativos, de modo que a nova fase começasse com base de dados e públicos mais confiáveis.' },
-        { t: 'Implicação', k: 'hipotese', x: 'A nova estrutura gera mais visitas por dia com investimento diário menor. Se essas visitas viram vendas é a pergunta central do próximo report.' }
-      ],
-      seguidores: [
-        { t: 'O que aconteceu', k: 'confirmado', x: 'A campanha de seguidores entrou no ar em 20/10. Até 22/10 (dia ainda parcial), trouxe 58 novos seguidores ao Instagram da Aldea, a R$ 0,50 cada, e 196 visitas ao perfil.' },
-        { t: 'Por quê', k: 'confirmado', x: 'A campanha leva os vídeos A2 e A3 a quem ainda não segue a marca, com o objetivo de visita ao perfil. No primeiro dia, o perfil ganhou 29 seguidores, 23 deles pela campanha. Antes, a média era de cerca de 3 por dia, somando todas as origens.' },
-        { t: 'Implicação', k: 'hipotese', x: 'Uma base maior de seguidores amplia o alcance do conteúdo da marca e forma um público que já conhece a Aldea, que pode ser trabalhado depois nas campanhas de venda.' }
+        { t: 'O que aconteceu', k: 'confirmado', x: 'Setembro rodou com a estrutura anterior. De 03/10 a 14/10, preparação sem anúncios. Em 15/10, a nova estrutura começou a veicular.' },
+        { t: 'Por quê', k: 'confirmado', x: 'A pausa foi usada para revisar audiências, mensuração e criativos antes da nova fase.' },
+        { t: 'Implicação', k: 'hipotese', x: 'Mais visitas por dia com investimento menor. Se elas viram vendas é a pergunta do próximo report.' }
       ],
       tendencia: [
         { t: 'O que aconteceu', k: 'confirmado', x: 'Investimento estável em setembro, com o pico de vendas na semana de 14 a 20/09 (Semana do Cliente). Após a preparação, a nova estrutura retoma o investimento em ritmo um pouco menor: R$ 32 por dia, contra R$ 40 em setembro.' },
@@ -62,7 +85,7 @@ window.RP_EDICOES = [
       { p: 'Quais foram os principais resultados?',
         r: 'De 01/09 a 21/10, o Meta Ads investiu R$ 1.465,59 e gerou 6 vendas atribuídas, com R$ 3.140,87 em receita, um retorno de 2,14 vezes o investimento. No Instagram, a campanha de seguidores trouxe 58 novos seguidores em três dias (até 22/10), a R$ 0,50 cada. O Google Ads investiu R$ 951,15 e levou 747 visitas ao site. As vendas do Google passam a ser medidas com precisão ao fim da revisão da mensuração.' },
       { p: 'O que melhorou ou piorou?',
-        r: 'Na primeira semana, a nova estrutura do Meta levou 40 visitas por dia ao site, contra 26 por dia em setembro, com custo médio por clique de R$ 0,80 (R$ 1,50 em setembro). O perfil no Instagram passou de cerca de 3 para mais de 20 novos seguidores por dia. Ainda não há vendas atribuídas à nova estrutura: com 7 dias e R$ 224,59 investidos, é cedo para essa leitura.' },
+        r: 'Na primeira semana, a nova estrutura do Meta levou 40 visitas por dia ao site, contra 26 por dia em setembro, com custo médio por clique de R$ 0,80 (R$ 1,50 em setembro). No Instagram, o perfil ganhou 29 novos seguidores em 20/10 (primeiro dia já disponível), contra média de 3,2 por dia antes; à parte, os anúncios somam 58 seguidores atribuídos. Ainda não há vendas atribuídas à nova estrutura: com 7 dias e R$ 224,59 investidos, é cedo para essa leitura.' },
       { p: 'Quais fatores explicam essas variações?',
         r: 'A nova estrutura muda o papel das campanhas: uma parte atrai público novo, outra retoma quem já visitou o site, e a campanha de seguidores gera visitas ao perfil e cliques de custo mais baixo. Objetivos diferentes têm custos diferentes e não se comparam diretamente. Num produto de R$ 520, a decisão de compra tende a levar mais que uma semana.' },
       { p: 'Quais oportunidades foram identificadas?',
@@ -89,7 +112,7 @@ window.RP_EDICOES = [
 
     textos: {
       resumo: [
-        { k: 'bom', o: 'D', t: 'Seguidores: crescimento acelerado no Instagram', x: 'Em três dias, a campanha de seguidores trouxe 58 novos seguidores, a R$ 0,50 cada (45 até 21/10; 22/10 parcial). Antes, o perfil ganhava cerca de 3 por dia; com a campanha, passou de 20 por dia.' },
+        { k: 'bom', o: 'D', t: 'Seguidores: crescimento acelerado no Instagram', x: 'Em três dias, a campanha de seguidores trouxe 58 novos seguidores, a R$ 0,50 cada (45 até 21/10; 22/10 parcial). Pelos dados do perfil, foram 29 novos seguidores em 20/10, contra média de 3,2 por dia antes.' },
         { k: 'bom', o: 'C', t: 'Mais visitas com investimento diário menor', x: 'Na primeira semana, a nova estrutura do Meta levou 40 visitas por dia ao site (26 em setembro), investindo R$ 32 por dia (R$ 40 em setembro).' },
         { k: 'bom', o: 'C', t: 'Criativos que funcionam', x: 'Para públicos novos, o vídeo A2 levou 79 visitas a R$ 1,27 cada (2,54% de taxa de clique). O A3 tem a melhor retenção: 13,6% das impressões chegam a 25% do vídeo.' },
         { k: 'neutro', o: 'A', t: 'Vendas: leitura a partir de 14 dias', x: 'Ainda não há vendas atribuídas à nova estrutura, que soma 7 dias e R$ 224,59. Nosso critério é ler vendas a partir de 14 dias e cerca de R$ 450 por campanha.' },

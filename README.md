@@ -17,11 +17,17 @@ Portal estático com tela de acesso e a Central do Cliente, onde ficam todos os 
   - `dados-meta.js` e `dados-google.js` — números das plataformas, gerados pelo conversor da Molla (não editar à mão).
   - `registro.js` — acontecimentos, recomendações de negativação e plano de ação, com histórico de decisões. Só cresce.
   - `edicoes.js` — uma entrada por report (semanal, quinzenal ou mensal), com período, comparação e análises. Edições antigas nunca são alteradas.
-- `vercel.json` — URLs limpas, noindex e redirecionamento do link antigo `/apresentacao`.
+- `vercel.json` — URLs limpas, noindex, redirecionamento do link antigo `/apresentacao` e o passo de publicação (`buildCommand`).
+- `scripts/gerar-versao.js` — roda na Vercel a cada publicação e grava `assets/versao.json` com a data e a hora. A Central mostra essa data como "Última atualização do sistema", em horário de Brasília. O `versao.json` não fica no repositório (`.gitignore`): ele só existe no que está publicado.
 
 ## Publicar
-1. No GitHub, envie todo o conteúdo desta pasta para a raiz do repositório (mantendo as pastas `assets/` e `materiais/`).
-2. No Vercel, importe o repositório (framework: Other, sem build). Cada novo envio ao GitHub publica sozinho.
+Fluxo padrão (com o app do Claude instalado no GitHub):
+1. As mudanças são feitas num branch (ex.: `melhoria/report-executivo`) e abertas como pull request.
+2. A Vercel publica o branch numa URL de **preview**, separada da produção. É ali que a mudança é conferida.
+3. Aprovada a mudança, o pull request é mesclado na `main`. A Vercel publica em produção sozinha, e a data de "Última atualização do sistema" muda.
+4. Se uma publicação falhar, a versão anterior continua no ar. Para voltar atrás, use "Instant Rollback" na Vercel ou reverta o commit.
+
+Envio manual (alternativa): no GitHub, envie todo o conteúdo desta pasta para a raiz do repositório, mantendo as pastas. A Vercel publica sozinha, direto em produção.
 
 ## Publicar um material novo
 1. Salve o HTML dentro de `materiais/` (ex.: `materiais/report-outubro-2026.html`).

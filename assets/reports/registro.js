@@ -15,25 +15,26 @@ window.RP_REGISTRO = {
 
   /* ---------------------------------------------------------------- Acontecimentos
      tipo: campanha · mensuracao · metodologia · marco · preparacao
-     fim: último dia (para períodos) · marco: rótulo curto que aparece no gráfico · corte: data de corte da régua (mensuração) */
+     fim: último dia (para períodos) · marco: rótulo curto que aparece no gráfico · corte: data de corte da régua (mensuração)
+     etapa: rótulo curto para a linha do tempo do capítulo 1 (Onde estávamos) */
   eventos: [
-    { data: '2026-09-15', tipo: 'marco', plataforma: 'ambas', titulo: 'Diagnóstico e plano de mídia paga apresentados',
+    { data: '2026-09-15', tipo: 'marco', plataforma: 'ambas', titulo: 'Diagnóstico e plano de mídia paga apresentados', etapa: 'Diagnóstico apresentado',
       texto: 'Ponto de partida do trabalho. O diagnóstico cobre 01/06 a 14/09/2026 e fica como referência histórica; seus números não são somados aos deste report.', origem: 'R' },
-    { data: '2026-09-01', fim: '2026-09-30', tipo: 'marco', plataforma: 'ambas', titulo: 'Setembro: mês de referência',
+    { data: '2026-09-01', fim: '2026-09-30', tipo: 'marco', plataforma: 'ambas', titulo: 'Setembro: mês de referência', etapa: 'Setembro, a referência',
       texto: 'Mês completo mais recente com a estrutura de campanhas anterior, já dentro da parceria. É a base de comparação das próximas edições.', origem: 'R' },
-    { data: '2026-10-03', fim: '2026-10-14', tipo: 'preparacao', plataforma: 'meta', titulo: 'Preparação da nova estrutura de campanhas',
+    { data: '2026-10-03', fim: '2026-10-14', tipo: 'preparacao', plataforma: 'meta', titulo: 'Preparação da nova estrutura de campanhas', etapa: 'Preparação, sem anúncios',
       texto: 'Período dedicado à preparação da nova estrutura: revisão das audiências, ajustes de tags e mensuração, curadoria e adequação dos criativos e planejamento das campanhas. O período incluiu o feriado de 12/10. Sem anúncios no ar no Meta nesses dias.', origem: 'R' },
-    { data: '2026-10-14', tipo: 'campanha', plataforma: 'ambas', titulo: 'Nova estrutura de campanhas no ar',
+    { data: '2026-10-14', tipo: 'campanha', plataforma: 'ambas', titulo: 'Nova estrutura de campanhas no ar', etapa: 'Nova estrutura no ar',
       texto: 'Meta: campanha de tráfego com públicos de interesse (prospecção) e de visitantes do site (remarketing). Google: nova Search por intenção de busca (marca, barefoot e transição). Primeira entrega no Meta em 15/10.', origem: 'R', marco: 'Nova estrutura' },
     { data: '2026-10-14', tipo: 'mensuracao', plataforma: 'google', titulo: 'Revisão da mensuração de conversões',
       texto: 'A compra concluída passa a ser a conversão principal; carrinho e checkout seguem medidos como sinais secundários. Em andamento. A data de corte da nova régua será registrada aqui ao final.', origem: 'R', pendente: true },
-    { data: '2026-10-20', tipo: 'campanha', plataforma: 'meta', titulo: 'Campanha de seguidores no ar',
+    { data: '2026-10-20', tipo: 'campanha', plataforma: 'meta', titulo: 'Campanha de seguidores no ar', etapa: 'Campanha de seguidores',
       texto: 'Campanha para levar pessoas ao perfil do Instagram e ganhar seguidores, com os vídeos A2 e A3. Gera visitas e cliques de custo mais baixo e não é comparada às campanhas de tráfego e vendas.', origem: 'R', marco: 'Seguidores' },
     { data: '2026-10-22', tipo: 'metodologia', plataforma: 'meta', titulo: 'Critérios de atribuição de vendas',
       texto: 'As campanhas do Meta usam critérios diferentes para atribuir uma venda a um anúncio (prazo e tipo de interação). Comparações de vendas entre campanhas pedem cautela.', origem: 'R' },
     { data: '2026-10-22', tipo: 'metodologia', plataforma: 'google', titulo: 'Google consolidado por campanha nesta edição',
       texto: 'A exportação desta edição traz o período inteiro por campanha. A partir da próxima, com dados diários e valor de venda, o report passa a mostrar evolução diária e retorno sobre investimento do Google.', origem: 'R' },
-    { data: '2026-10-22', tipo: 'marco', plataforma: 'ambas', titulo: 'Report 01 publicado',
+    { data: '2026-10-22', tipo: 'marco', plataforma: 'ambas', titulo: 'Report 01 publicado', etapa: 'Report 01',
       texto: 'Primeira edição: setembro como referência e primeira semana da nova estrutura.', origem: 'R' }
   ],
 

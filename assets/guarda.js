@@ -15,6 +15,32 @@
     });
   }
   if (sessionStorage.getItem('aldea_auth') !== 'ok') { location.replace(raiz + 'index.html'); return; }
+  // Última atualização do sistema: data da última publicação na Vercel (assets/versao.json, gerado no deploy)
+  function carimbo(){
+    if (!window.fetch || document.querySelector('.ult-atualizacao')) return;
+    fetch(raiz + 'assets/versao.json', {cache: 'no-store'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(v){
+      var d = v && v.publicadoEm ? new Date(v.publicadoEm) : null;
+      if (!d || isNaN(d)) return;
+      var p = {};
+      new Intl.DateTimeFormat('pt-BR', {timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', hourCycle: 'h23'})
+        .formatToParts(d).forEach(function(x){ p[x.type] = x.value; });
+      var quando = p.day + '/' + p.month + '/' + p.year + ' às ' + p.hour + 'h' + p.minute;
+      var s = document.createElement('span');
+      s.className = 'ult-atualizacao';
+      s.title = 'Horário de Brasília' + (v.commit ? ' · versão ' + v.commit : '');
+      s.innerHTML = '<span class="ua-l">Última atualização do sistema: </span><span class="ua-s">Atualizado em </span>' + quando;
+      var st = document.createElement('style');
+      st.textContent = '.ult-atualizacao{align-self:center;font:600 10.5px/1.3 "Inter",Arial,sans-serif;letter-spacing:.02em;white-space:nowrap;color:rgba(255,255,255,.62)}' +
+        '.topbtns .ult-atualizacao{color:inherit;opacity:.75}.ua-s{display:none}' +
+        '@media (max-width:640px){.ua-l{display:none}.ua-s{display:inline}.topbtns .ult-atualizacao{display:none}#topbtns .ult-atualizacao{flex-basis:100%;text-align:right;order:9}}' +
+        '@media print{.ult-atualizacao{display:none}}';
+      document.head.appendChild(st);
+      var sair = document.getElementById('sair'), box = document.getElementById('topbtns');
+      if (sair && sair.parentNode && !dentro) sair.parentNode.insertBefore(s, sair);
+      else if (box) { var pdf = box.querySelector('.pdf-btn'); if (pdf) s.style.color = getComputedStyle(pdf).color; box.insertBefore(s, box.firstChild); }
+    }).catch(function(){});
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', carimbo); else carimbo();
   if (!dentro) return;
   function botoes(){
     var box = document.getElementById('topbtns');
